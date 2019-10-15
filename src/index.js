@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
@@ -13,6 +14,10 @@ const ROSTER = [
 
 
 
-ReactDOM.render(<App roster={ROSTER}/>, document.getElementById('root'));
+ReactDOM.render(
+  <BrowserRouter>
+    <App roster={ROSTER}/>
+  </BrowserRouter>
+  , document.getElementById('root'));
 //same as: document.querySelector('#root')
 
