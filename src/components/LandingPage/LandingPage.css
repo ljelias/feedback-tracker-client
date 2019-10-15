@@ -1,0 +1,38 @@
+.top {
+  text-align: center;
+  background-color: lightgray;
+  width: 90%;
+  max-width: 500px;
+  margin: 12px auto;
+  padding: 9px;
+}
+.tempGoTo {
+  border: 1px solid grey;
+  width: 70%;
+  max-width: 440px;
+  margin: 12px auto;
+  text-align: center;
+  padding: 15px 0;
+}
+.tempGoTo:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.loginForm {
+  border: 2px dashed lightgray;
+  background-color: rgb(247, 247, 247);
+  width: 70%;
+  max-width: 440px;
+  margin: 15px auto;
+  text-align: center;
+  padding: 48px 0px;
+  
+}
+.appInfo {
+  width: 70%;
+  max-width: 400px;
+  background-color: rgb(232, 245, 250);
+  border-radius: 60px;
+  margin: 12px auto;
+  text-align: center;
+  padding: 9px;
+}

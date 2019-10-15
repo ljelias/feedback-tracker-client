@@ -1,0 +1,21 @@
+.topicTitle { 
+  font-size: 1.2rem;
+  width: 85%;
+  max-width: 440px;
+  margin: 6px auto;
+  background-color: rgb(230, 229, 229);
+}
+.topicItem {
+  text-align: center;
+  border: 1px solid grey;
+  width: 85%;
+  max-width: 480px;
+  margin: 9px auto;
+  padding: 6px;
+}
+.topicItem:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+h5 {
+  font-size: 1.1rem;
+}

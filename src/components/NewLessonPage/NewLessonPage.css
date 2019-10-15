@@ -1,0 +1,32 @@
+header.top {
+  background-color: rgb(235, 235, 235);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  margin: 6px auto;
+  padding: 9px;
+}
+.sessionNotes {
+  border: 1px solid grey;
+  width: 85%;
+  max-width: 480px;
+  margin: 15px auto;
+  padding: 15px;
+}
+.addNewTopic {
+  float: right;
+  border-radius: 15px;
+}
+.newTopic {
+  background-color:rgb(235, 235, 235);
+  width: 85%;
+  max-width: 440px;
+  margin: 15px auto;
+  padding: 6px;
+}
+.notesField {
+  display: block;
+}
+.saveNewNotes {
+  float: right;
+}

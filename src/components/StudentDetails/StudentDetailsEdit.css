@@ -1,0 +1,17 @@
+.studentDetailsEditor {
+  border: 1px solid grey;
+  width: 85%;
+  max-width: 480px;
+  margin: 15px auto;
+  padding: 15px;
+}
+.updateStudent {
+  float: right;
+}
+input, textarea {
+  display: block;
+  margin-bottom: 9px;
+}
+textarea {
+  min-width: 180px;
+}

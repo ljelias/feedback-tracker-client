@@ -1,0 +1,11 @@
+.studentDetails {
+  width: 85%;
+  max-width: 480px;
+  text-align: left;
+  border: 1px solid grey;
+  margin: 15px auto;
+  padding: 15px;
+}
+.editStudent {
+  float: right;
+}
