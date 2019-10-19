@@ -12,7 +12,7 @@ class NewLessonPage extends Component {
         <form className='sessionNotes'>
           <button className='addNewTopic'>+ New Topic</button>
   
-          <label for='stdName' className='notesField'>Student:&nbsp;
+          <label htmlFor='stdName' className='notesField'>Student:&nbsp;
             <select id='stdName'>
               <option>StudentA</option>
               <option>StudentB</option>
@@ -20,7 +20,7 @@ class NewLessonPage extends Component {
               <option>StudentD</option>
             </select>
           </label>
-          <label for='sessionDate' className='notesField'>Date:&nbsp;
+          <label htmlFor='sessionDate' className='notesField'>Date:&nbsp;
             <input type='date' id='sessionDate' name='date' />
           </label>
   
@@ -35,10 +35,10 @@ class NewLessonPage extends Component {
   
         <button type='submit' className='saveNewNotes'>Save Lesson</button>      
   
-        <label for='nextDate' className='notesField'>Next lesson:&nbsp;
+        <label htmlFor='nextDate' className='notesField'>Next lesson:&nbsp;
           <input type='text' id='nextDate' />
         </label>
-        <label for='nextTopics' className='notesField'>Topics:&nbsp;
+        <label htmlFor='nextTopics' className='notesField'>Topics:&nbsp;
           <input type='text' id='nextTopics' />
         </label>  
       </form>

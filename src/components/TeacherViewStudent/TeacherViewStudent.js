@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './TeacherViewStudent.css';
 import NoteViewOptions from '../NoteViewOptions/NoteViewOptions';
 import StudentDetailsDisplay from '../StudentDetails/StudentDetailsDisplay';
@@ -46,7 +47,9 @@ class TeacherViewStudent extends Component {
 
   render() {
     const studentInfoSection = this.state.editStudentInfo
-    ? <StudentDetailsEdit showEditing={show => this.setEditStudent(show)} currentStudent={this.state.currentStudent} /> 
+    ? <StudentDetailsEdit showEditing={show => this.setEditStudent(show)} 
+        currentStudent={this.state.currentStudent} 
+        resetStudent={student => this.setCurrentStudent(student)} /> 
     : <StudentDetailsDisplay showEditing={show => this.setEditStudent(show)} currentStudent={this.state.currentStudent} />;
 
     return (<>
@@ -60,9 +63,11 @@ class TeacherViewStudent extends Component {
         </div>
       </section>
 
-      <div className='newLesson'><h4>Create new lesson notes</h4></div>
+      <div className='newLesson'>
+        <Link to={`/lessons`}><h4>Create new lesson notes</h4></Link>
+      </div>
 
-      <NoteViewOptions />
+      <NoteViewOptions studentId={this.state.currentStudent.id} />
     </>
     );
   }

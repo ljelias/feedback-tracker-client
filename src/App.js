@@ -28,8 +28,8 @@ class App extends Component {
         <Route exact path='/teacher' component={TeacherDashboard} />
         <Route path='/teacher/:student' component={TeacherViewStudent} />
         <Route path='/student/:student' component={StudentDashboard} />
-        <Route path='/lesson' component={NewLessonPage} />
-        <Route path='/lesson/:lesson' component={SingleLessonView} />
+        <Route path='/lessons' component={NewLessonPage} />
+        <Route path='/lessons/:lesson' component={SingleLessonView} />
       </main>
     );
   }

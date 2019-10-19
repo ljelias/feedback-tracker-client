@@ -7,9 +7,9 @@ class StudentDetailsDisplay extends Component {
     console.log(student);
 
     return (
-      <div className='studentDetails'>
+      <div className='studentDetails' key={student.id}>
         <button type='submit' className='editStudent'
-          onClick={e => this.props.showEditing(true)}>Edit
+          onClick={e => this.props.showEditing(true)}>Edit Student Info
         </button>
         <p className='parag'>First Name:&nbsp;<span className='details'>{student.firstName}</span></p>
         <p className='parag'>Last Name:&nbsp;<span className='details'>{student.lastName}</span></p>
