@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Roster.css';
 
 class Roster extends Component {
+
+// let colors = ['red','blue','green','yellow','cyan','orange'];
+// document.getElementsByClassName('rosterItem').each(function(){
+//    let new_color = colors[Math.floor(Math.random()*colors.length)];
+//    $(this).css('background-color', new_color);
+//  });
+
+
   render() {
+    const students = this.props.students;
+
+    const allStudents = students.map(student => 
+      <div className='rosterItem' key={student.id}>  
+        <Link to={`/teacher/${student.id}`}>
+          <h3>{student.firstName}&nbsp;{student.lastName}</h3>
+        </Link>
+      </div>
+      )
+
     return (
       <section className='showRoster'>
-        <div className='rosterItem'><h3>StudentA</h3></div>
-        <div className='rosterItem'><h3>StudentB</h3></div>
-        <div className='rosterItem'><h3>StudentC</h3></div>
+        {allStudents}
       </section>
     );
   }
 }
 
 export default Roster;
+
+//??? use "key" on line10 instead of "id"?
 
 

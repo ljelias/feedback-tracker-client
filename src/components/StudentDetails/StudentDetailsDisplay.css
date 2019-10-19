@@ -9,3 +9,10 @@
 .editStudent {
   float: right;
 }
+.parag{
+  margin: 4px;
+}
+.details{
+  font-size: 1rem;
+  font-weight: 600;
+}

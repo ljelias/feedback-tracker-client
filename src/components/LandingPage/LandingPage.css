@@ -7,6 +7,9 @@
   padding: 9px;
 }
 .tempGoTo {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 600;
   border: 1px solid grey;
   width: 70%;
   max-width: 440px;

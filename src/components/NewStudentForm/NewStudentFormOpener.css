@@ -28,24 +28,3 @@ h3 {
 .italicSpan {
   font-style: italic;
 }
-
-form {
-  padding: 15px;
-  text-align: left;
-}
-.labeler {
-  display: block;
-  margin-bottom: 9px;
-}
-label, input, textarea {
-  vertical-align: top;
-}
-input {
-  min-width: 240px;
-}
-.saveStd {
-  float: right;
-}
-#newStdInfo {
-  min-width: 300px;
-}

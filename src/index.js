@@ -17,7 +17,7 @@ const ROSTER = [
 ReactDOM.render(
   <BrowserRouter>
     <App roster={ROSTER}/>
-  </BrowserRouter>
-  , document.getElementById('root'));
+  </BrowserRouter>, document.getElementById('root'));
+  
 //same as: document.querySelector('#root')
 

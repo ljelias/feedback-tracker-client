@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './LandingPage.css';
 
 class LandingPage extends Component {
@@ -8,7 +9,9 @@ class LandingPage extends Component {
       <h1>Feedback Tracker Welcome</h1>
     </header>
     <main>
-      <div className='tempGoTo'>Go to teacher dashboard</div>
+      <Link to='/teacher'>
+        <div className='tempGoTo'>Go to teacher dashboard</div>
+      </Link>
       <section className='appInfo'>
         <div className='appInfo'>
           <h2>About this app</h2>

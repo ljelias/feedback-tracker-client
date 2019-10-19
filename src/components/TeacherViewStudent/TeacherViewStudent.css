@@ -6,6 +6,15 @@ header.top {
   margin: 6px auto;
   padding: 9px;
 }
+header h2 {
+  margin: 0;
+}
+.stdName {
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-style: italic;
+  margin: 3px;
+}
 h4 { 
   font-size: 1.2rem;
   margin: 6px;
@@ -14,6 +23,7 @@ h4 {
   text-align: center;
   background-color: rgb(235, 235, 235);
   border: 1px solid grey;
+  border-radius: 9px;
   width: 75%;
   max-width: 400px;
   margin: 9px auto;

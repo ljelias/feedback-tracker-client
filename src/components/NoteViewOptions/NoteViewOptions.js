@@ -10,11 +10,11 @@ class NoteViewOptions extends Component {
 
         <div className='viewOptions'>
           <div className='viewByDate'>
-            <h4>View notes by date</h4>
-            <button >View by lesson date</button>
+            <h4 className='optionTitle'>View notes by date</h4>
+            <button >Show lesson dates</button>
           </div>      
           <div className='chooseTopic'>
-            <h4>View notes by topic</h4>
+            <h4 className='optionTitle'>View notes by topic</h4>
             <select>
               <option>vowels</option>
               <option>stress</option>
