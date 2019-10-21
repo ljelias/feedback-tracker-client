@@ -1,9 +1,14 @@
+
 .topicTitle { 
-  font-size: 1.2rem;
   width: 85%;
   max-width: 440px;
-  margin: 6px auto;
+  margin: 24px auto 9px auto;
+  font-size: 1.1rem;
+  font-weight: 500;
   background-color: rgb(230, 229, 229);
+}
+.topicName {
+  font-style: italic;
 }
 .topicItem {
   text-align: center;
@@ -11,11 +16,15 @@
   width: 85%;
   max-width: 480px;
   margin: 9px auto;
-  padding: 6px;
+  padding: 0 15px;
 }
 .topicItem:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
-h5 {
+.topicItemTitle {
   font-size: 1.1rem;
+  margin: 9px 0;
+}
+.topicItem p {
+  margin: 12px 0;
 }

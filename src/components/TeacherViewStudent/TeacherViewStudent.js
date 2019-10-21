@@ -16,7 +16,6 @@ class TeacherViewStudent extends Component {
       error: null
     };
   }
-
   setEditStudent(show) {
     this.setState({ editStudentInfo: show });
   }
@@ -60,9 +59,7 @@ class TeacherViewStudent extends Component {
       .catch(err => {
         this.setState({ error: err.message });
       });
-  
   }
-
 
   render() {
     const studentInfoSection = this.state.editStudentInfo

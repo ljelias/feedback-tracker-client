@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import './ViewNotesByTopic.css';
 
 class ViewNotesByTopic extends Component {
+
+
   render() {
+    console.log(this.props.topicResults);
+    let items = this.props.topicResults;
+    let topicList = items.map((item, i) => 
+      <div className='topicItem' key={item.lesson_id}>
+        <h5 className='topicItemTitle'>From lesson: (date){item.lesson_id}</h5>
+        <p>{item.topic_content}</p>
+      </div>
+      );
+
     return (
       <div className='lessonsByTopic'>
-        <h3 className='topicTitle'>Notes by Topic: topic_name}</h3>
-        <div className='topicItem'><h5>From lesson date: lesson_date}</h5><p>lesson_content} lorem ipsum lorem ipsum lorem ipsum<br />lorem ipsumlorem ipsumlorem ipsumlorem ipsum</p></div>
-        <div className='topicItem'><h5>From lesson date: lesson_date}</h5><p>lesson_content} lorem ipsum lorem ipsum lorem ipsum<br />lorem ipsumlorem ipsumlorem ipsumlorem ipsum</p></div>
-        <div className='topicItem'><h5>From lesson date: lesson_date}</h5><p>lesson_content} lorem ipsum lorem ipsum lorem ipsum<br />lorem ipsumlorem ipsumlorem ipsumlorem ipsum</p></div>
+        <h3 className='topicTitle'>Notes for Topic: <span className='topicName'>{this.props.topic}</span></h3>
+        {topicList}
       </div>
     );
   }

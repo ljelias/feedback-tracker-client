@@ -45,9 +45,7 @@ class StudentDetailsEdit extends Component {
 
     return (
       <form className='studentDetailsEditor' onSubmit = {e => {this.getFormValues(e)}}>
-        <button type='submit' className='updateStudent'
-          //onClick={e => this.props.showEditing(false)}
-          >Save</button>
+        <button type='submit' className='updateStudent'>Save</button>
         <input className="editingStudent" type="text" name='stdFName' defaultValue={student.firstName} />
         <input className="editingStudent" type="text" name='stdLName' defaultValue={student.lastName} />
         <input className="editingStudent" type="text" name='stdPhone' defaultValue={student.phone} />

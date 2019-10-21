@@ -9,36 +9,13 @@ class NoteViewOptions extends Component {
     super(props);
     this.state = {
       displayList: [],
+      chosenTopic: '',
+      topicFetchResults: [],
+      showDates: false,
+      showTopic: false,
       error: null
     };
   }
-
-  /*
-  fetchStudentTopics = () => {
-    let id = this.props.studentId;
-    console.log(id);
-    let options = {
-      method: 'GET',
-      headers: { "Content-Type": "application/json" }
-    };
-    fetch(`http://localhost:8000/api/topics/${id}`, options)
-      .then(response => {
-        if(!response.ok) {
-          console.log('Error.');
-          throw new Error('Something went wrong');
-        }       
-        return response;
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        this.setState({studentTopics: data});
-      })
-      .catch(err => {
-        this.setState({ error: err.message });
-      });
-  }
-*/
   
   handleGetStudentSessions = () => {
     let id = this.props.studentId;
@@ -56,17 +33,50 @@ class NoteViewOptions extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      this.setState({ displayList: data });    
+      this.setState({ displayList: data }); 
+      this.setState({ showDates: true });  
+      this.setState({ showTopic: false});
     })
     .catch(err => console.log('Error with request'))
   }
 
+  getOptionValue = (e) => {
+    e.preventDefault();
+    let selection = e.target.value;
+    console.log(selection);
+    this.setState({chosenTopic: selection}); 
+    this.handleGetTopic(selection)
+  }
+  handleGetTopic = (selection) => {
+    fetch(`http://localhost:8000/api/topics/${selection}/${this.props.studentId}`)
+      .then(response => {
+        if(!response.ok) {
+          console.log('Error.');
+          throw new Error('Something went wrong');
+        }       
+        return response;
+      })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ topicFetchResults: data });
+        this.setState({ showTopic: true });
+        this.setState({ showDates: false });  
+  
+      })
+      .catch(err => {
+        this.setState({ error: err.message });
+      });
+
+  }
 
   render() {
-      console.log(this.props.studentTopics);
-      let topicOptions = this.props.studentTopics.map((topic, i) =>
-        <option key={i}>{topic.topic_name}</option>
-        )
+    console.log(this.props.studentTopics);
+    let topicOptions = this.props.studentTopics.map((topic, i) =>
+      <option key={i} value={topic.topic_name}>{topic.topic_name}</option>
+      )
+
+    const lessonDatesSection = this.state.showDates ? <LessonNotesList listData={this.state.displayList}/> : '';
+    const lessonTopicSection = this.state.showTopic ? <ViewNotesByTopic topicResults={this.state.topicFetchResults} topic={this.state.chosenTopic} id={this.props.studentId} /> : '';
 
     return (
       <section className='showLessonSummaries'>
@@ -78,15 +88,14 @@ class NoteViewOptions extends Component {
           </div>      
           <div className='chooseTopic'>
             <h4 className='optionTitle'>View notes by topic</h4>
-            <select>
+            <select onChange={e => {this.getOptionValue(e)}}>
+              <option value="" selected>Choose a topic</option>
               ${topicOptions}
             </select>
           </div>
         </div>
-
-      <LessonNotesList listData={this.state.displayList}/>
-      <ViewNotesByTopic />
-
+      {lessonDatesSection}
+      {lessonTopicSection}
       </section>
 
     );
