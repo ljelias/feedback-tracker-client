@@ -28,7 +28,7 @@ class App extends Component {
         <Route exact path='/teacher' component={TeacherDashboard} />
         <Route path='/teacher/:student' component={TeacherViewStudent} />
         <Route path='/student/:student' component={StudentDashboard} />
-        <Route exact path='/lessons' component={NewLessonPage} />
+        <Route exact path='/lesson' component={NewLessonPage} />
         <Route path='/lessons/:lesson' component={SingleLessonView} />
       </main>
     );

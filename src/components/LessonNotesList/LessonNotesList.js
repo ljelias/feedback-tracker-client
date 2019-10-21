@@ -10,7 +10,7 @@ class LessonNotesList extends Component {
     const sessions = this.props.listData;
     const allSessions = sessions.map(session => 
       <div className='lessonItem' key={session.id}>
-        <Link to={`/lessons/{session.id}`}>
+        <Link to={`/lessons/${session.id}`}>
           <h3>Lesson notes for {session.lesson_date}</h3>
         </Link>
       </div>

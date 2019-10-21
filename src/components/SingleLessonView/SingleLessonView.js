@@ -14,12 +14,12 @@ class SingleLessonView extends Component {
       <section>
         <div className='lessonTopicTitleA'>
           <header className='toggleShowHide'>
-            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleA} </span><span class='arrowpointers'> &#9662;</span></h3>
+            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleA} </span><span className='arrowpointers'> &#9662;</span></h3>
           </header>
         </div>
         <div className='lessonTopicTitleB'>
           <header className='toggleShowHide'>
-            <h3><span id='lessonTitle' className='italicspan'>Topic: lesson.topicTitleA} </span><span class='arrowpointers'> &#9652;</span></h3>
+            <h3><span id='lessonTitle' className='italicspan'>Topic: lesson.topicTitleA} </span><span className='arrowpointers'> &#9652;</span></h3>
           </header>
           <div className='topicDetails'>
             <p>A bunch of stuff the teacher wrote, etc, etc, etc...</p>
@@ -28,12 +28,12 @@ class SingleLessonView extends Component {
         </div>
         <div className='mockLessonTopicTitleA'>
           <header className='mockShowHide'>
-            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleB} </span><span class='arrowpointers'> &#9662;</span></h3>
+            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleB} </span><span className='arrowpointers'> &#9662;</span></h3>
           </header>
         </div>
         <div className='mockLessonTopicTitleA'>
           <header className='mockShowHide'>
-            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleC} </span><span class='arrowpointers'> &#9662;</span></h3>
+            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleC} </span><span className='arrowpointers'> &#9662;</span></h3>
           </header>
         </div>
 

@@ -88,8 +88,8 @@ class NoteViewOptions extends Component {
           </div>      
           <div className='chooseTopic'>
             <h4 className='optionTitle'>View notes by topic</h4>
-            <select onChange={e => {this.getOptionValue(e)}}>
-              <option value="" selected>Choose a topic</option>
+            <select defaultValue={'DEFAULT'} onChange={e => {this.getOptionValue(e)}}>
+              <option value="DEFAULT" disabled>Choose a topic</option>
               ${topicOptions}
             </select>
           </div>
@@ -103,7 +103,6 @@ class NoteViewOptions extends Component {
 }
 
 export default NoteViewOptions;
-
 
 
 

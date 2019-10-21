@@ -82,7 +82,7 @@ class TeacherViewStudent extends Component {
         </div>
       </section>
 
-      <Link to={`/lessons`}><button className='newLesson'>Create new lesson notes</button></Link>
+      <Link to={`/lesson`}><button className='newLesson'>Create new lesson notes</button></Link>
 
       <div className='previousLessons'>
         <h4>View lesson notes</h4>

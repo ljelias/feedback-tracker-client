@@ -13,20 +13,21 @@ header.top {
   margin: 15px auto;
   padding: 15px;
 }
-.addNewTopic {
-  float: right;
-  border-radius: 15px;
+#sessionDate {
+  display: inline-block;
 }
-.newTopic {
-  background-color:rgb(235, 235, 235);
-  width: 85%;
-  max-width: 440px;
-  margin: 15px auto;
-  padding: 6px;
-}
-.notesField {
-  display: block;
+
+#nextInfo{
+  min-width: 300px;
 }
 .saveNewNotes {
   float: right;
 }
+.newTopic {
+  width: 95%;
+  max-width: 440px;
+  margin: 30px auto;
+  padding: 6px;
+  background-color:rgb(235, 235, 235);
+}
+
