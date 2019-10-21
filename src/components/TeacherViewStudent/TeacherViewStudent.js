@@ -11,6 +11,7 @@ class TeacherViewStudent extends Component {
     super(props);
     this.state = {
       currentStudent: {},
+      studentTopics: [],
       editStudentInfo: false,
       error: null
     };
@@ -42,6 +43,24 @@ class TeacherViewStudent extends Component {
       .catch(err => {
         this.setState({ error: err.message });
       });
+
+      fetch(`http://localhost:8000/api/topics/${this.props.match.params.student}`)
+      .then(response => {
+        if(!response.ok) {
+          console.log('Error.');
+          throw new Error('Something went wrong');
+        }       
+        return response;
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        this.setState({studentTopics: data});
+      })
+      .catch(err => {
+        this.setState({ error: err.message });
+      });
+  
   }
 
 
@@ -54,7 +73,10 @@ class TeacherViewStudent extends Component {
 
     return (<>
       <header className='top'>
-        <h2>Teacher Dashboard: View Student</h2>
+        <Link to={`/teacher`}>
+          <button className='toDashboard'>Back to instructor dashboard</button>
+        </Link>
+        <h2>Instructor Viewing Student:</h2>
         <p className='stdName'>{this.state.currentStudent.firstName}&nbsp;{this.state.currentStudent.lastName}</p>
       </header>
       <section className='basicInfo'>
@@ -63,11 +85,13 @@ class TeacherViewStudent extends Component {
         </div>
       </section>
 
-      <div className='newLesson'>
-        <Link to={`/lessons`}><h4>Create new lesson notes</h4></Link>
+      <Link to={`/lessons`}><button className='newLesson'>Create new lesson notes</button></Link>
+
+      <div className='previousLessons'>
+        <h4>View lesson notes</h4>
       </div>
 
-      <NoteViewOptions studentId={this.state.currentStudent.id} />
+      <NoteViewOptions studentId={this.state.currentStudent.id} studentTopics={this.state.studentTopics}/>
     </>
     );
   }

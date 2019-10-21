@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './LessonNotesList.css';
 
 class LessonNotesList extends Component {
+
   render() {
+
+    const sessions = this.props.listData;
+    const allSessions = sessions.map(session => 
+      <div className='lessonItem' key={session.id}>
+        <Link to={`/lessons/{session.id}`}>
+          <h3>Lesson notes for {session.lesson_date}</h3>
+        </Link>
+      </div>
+    )
+
     return (
       <div className='lessonsByDate'>
-        <div className='lessonItem'><h3>Lesson notes 03/01/2020</h3></div>
-        <div className='lessonItem'><h3>Lesson notes 02/15/2020</h3></div>
-        <div className='lessonItem'><h3>Lesson notes 02/01/2020</h3></div>
+        {allSessions}
       </div>
     );
   }

@@ -53,7 +53,7 @@ class TeacherDashboard extends Component {
     return (
       <div>
         <header className='top'>
-          <h2>Teacher Dashboard: My students</h2>
+          <h2>Instructor Dashboard: My students</h2>
         </header>
         <main>
           <section className='addStudent'>
