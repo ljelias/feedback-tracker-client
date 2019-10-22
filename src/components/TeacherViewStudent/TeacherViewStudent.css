@@ -26,24 +26,24 @@ header h2 {
   width: 70%;
   max-width: 300px;
   margin: 9px auto;
-  padding: 6px;
+  padding: 9px;
+  border-radius: 3px;
 }
 .newLesson:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
-.previousLessons h4 { 
+.previousLessons {
+  max-width: 540px;
+  margin: 24px auto;
+  padding: 0 0 60px 0;
+  border: 3px solid lightsteelblue;
+  border-radius: 3px;
+}
+.previousLessonsTitle{
+  text-align: center;
+  background-color: lightsteelblue;
   font-size: 1.2rem;
   margin: 0;
-  padding: 0;
-}
-.previousLessons{
-  text-align: center;
-  background-color: rgb(235, 235, 235);
-  border: 1px solid grey;
-  border-radius: 6px;
-  width: 95%;
-  max-width: 540px;
-  margin: 24px auto 3px auto;
-  padding: 0;
+  padding: 6px;
 }
 

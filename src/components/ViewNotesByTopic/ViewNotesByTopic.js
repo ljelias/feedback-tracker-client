@@ -16,7 +16,7 @@ class ViewNotesByTopic extends Component {
 
     return (
       <div className='lessonsByTopic'>
-        <h3 className='topicTitle'>Notes for Topic: <span className='topicName'>{this.props.topic}</span></h3>
+        <h3 className='topicBanner'>Notes for Topic: <span className='topicName'> {this.props.topic}</span></h3>
         {topicList}
       </div>
     );

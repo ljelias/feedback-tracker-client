@@ -1,8 +1,9 @@
 
-.topicTitle { 
-  width: 85%;
-  max-width: 440px;
+.topicBanner { 
+  width: 99%;
+  max-width: 480px;
   margin: 24px auto 9px auto;
+  text-align: left;
   font-size: 1.1rem;
   font-weight: 500;
   background-color: rgb(230, 229, 229);

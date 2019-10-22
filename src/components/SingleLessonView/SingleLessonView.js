@@ -1,49 +1,103 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './SingleLessonView.css';
 
 class SingleLessonView extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentLesson: [],
+      currentStudent: {},
+      lessonTopics: [],
+      error: null
+    };
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:8000/api/sessions/${this.props.match.params.lesson}`)
+      .then(response => {
+        if(!response.ok) { console.log('Error.');
+                           throw new Error('Something went wrong'); }       
+        return response;
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        this.setState({currentLesson: data});
+        let student = data.student_id;
+        this.getStudentInfo(student);
+        let session = data.id;
+        this.getSessionTopics(session);
+      })
+      .catch(err => {
+        this.setState({ error: err.message });
+      });  
+  }
+
+  getStudentInfo = (studentId) => {
+    fetch(`http://localhost:8000/api/students/${studentId}`)
+    .then(response => {
+      if(!response.ok) { console.log('Error.');
+                         throw new Error('Something went wrong'); }       
+      return response;
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      this.setState({currentStudent: data});
+    })
+    .catch(err => {
+      this.setState({ error: err.message });
+    });  
+  }
+  getSessionTopics = (sessionId) => {
+    fetch(`http://localhost:8000/api/topics/session/${sessionId}`)
+    .then(response => {
+      if(!response.ok) { console.log('Error.');
+                         throw new Error('Something went wrong'); }       
+      return response;
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      this.setState({lessonTopics: data});
+    })
+    .catch(err => {
+      this.setState({ error: err.message });
+    });  
+  }
+
+  
+
   render() {
+    let student = this.state.currentStudent;
+    let lesson = this.state.currentLesson;
+    let topics = this.state.lessonTopics;
+    let topicSet = topics.map((topic, i) => <div key={i} className='lessonTopicDiv'>
+          <header className='topicHeader'>
+            <h4 className='topicTitle'>Topic: <span className='italicspan'>{topic.topic_name}</span></h4>
+          </header>
+          <div className='topicDetails'><p>{topic.topic_content}</p></div>
+        </div>);
+
+
     return (<>
       <header className='lessonTitle'>
         <h2>Lesson Summary</h2>
-        <p>Student: student.name}</p>
-        <p>Date:  lesson.date}</p>
-        <button>Back</button>
+        <p>Student: <span className='italic'>{student.firstName} {student.lastName}</span></p>
+        <p>Date: <span className='italic'>{lesson.lesson_date}</span></p>
+        <Link to={`/teacher/${student.id}`}><button>Back to student overview</button></Link>
       </header>
 
       <section>
-        <div className='lessonTopicTitleA'>
-          <header className='toggleShowHide'>
-            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleA} </span><span className='arrowpointers'> &#9662;</span></h3>
-          </header>
-        </div>
-        <div className='lessonTopicTitleB'>
-          <header className='toggleShowHide'>
-            <h3><span id='lessonTitle' className='italicspan'>Topic: lesson.topicTitleA} </span><span className='arrowpointers'> &#9652;</span></h3>
-          </header>
-          <div className='topicDetails'>
-            <p>A bunch of stuff the teacher wrote, etc, etc, etc...</p>
-            <p>And more info, paragraph and stuff</p>
-          </div>
-        </div>
-        <div className='mockLessonTopicTitleA'>
-          <header className='mockShowHide'>
-            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleB} </span><span className='arrowpointers'> &#9662;</span></h3>
-          </header>
-        </div>
-        <div className='mockLessonTopicTitleA'>
-          <header className='mockShowHide'>
-            <h3><span id='lessonTitle' className='italicspan'>View Topic: lesson.topicTitleC} </span><span className='arrowpointers'> &#9662;</span></h3>
-          </header>
-        </div>
-
+        {topicSet}
       </section>
 
       <section className='nextSessionInfo'>
         <div className='nextSessionDetails'>
-          <h4>Next Session:</h4>
-          <p>Date: March 15, 2020</p>
-          <p>Topics: finish article / review short vowels</p>
+          <h4 className='nextSessionTitle'>Next Session:</h4>
+          <p>{lesson.next_session_info}</p>
         </div>
       </section>
   

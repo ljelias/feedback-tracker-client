@@ -73,7 +73,7 @@ class TeacherViewStudent extends Component {
         <Link to={`/teacher`}>
           <button className='toDashboard'>Back to instructor dashboard</button>
         </Link>
-        <h2>Instructor Viewing Student:</h2>
+        <h2>Student Overview:</h2>
         <p className='stdName'>{this.state.currentStudent.firstName}&nbsp;{this.state.currentStudent.lastName}</p>
       </header>
       <section className='basicInfo'>
@@ -85,10 +85,10 @@ class TeacherViewStudent extends Component {
       <Link to={`/lesson`}><button className='newLesson'>Create new lesson notes</button></Link>
 
       <div className='previousLessons'>
-        <h4>View lesson notes</h4>
+        <h4 className='previousLessonsTitle'>View lesson notes</h4>
+        <NoteViewOptions studentId={this.state.currentStudent.id} studentTopics={this.state.studentTopics}/>
       </div>
 
-      <NoteViewOptions studentId={this.state.currentStudent.id} studentTopics={this.state.studentTopics}/>
     </>
     );
   }

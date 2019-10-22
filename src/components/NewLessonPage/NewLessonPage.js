@@ -11,14 +11,95 @@ class NewLessonPage extends Component {
       currentStudent: {},
       roster: [],
       studentTopics: [],
+      sessionInfo: {},
+      topicInfo: {},
       error: null
     };
   }
 
+  getFormValues = (e) => {
+    e.preventDefault();
+    let newSessionInfo = {
+      student_id: e.target.student.value,
+      lesson_date: e.target.date.value,
+      next_session_info: e.target.nextInfo.value
+    };
+    this.setState({sessionInfo: newSessionInfo});
+
+    let topicName = e.target.optionA.value;
+    if (topicName ==='Other') {
+      topicName = e.target.optionA2.value;
+    }
+
+    let newTopicDetails = {
+      student_id: e.target.student.value,
+      topic_name: topicName,
+      topic_content: e.target.infoA.value
+    }
+    this.setState({topicInfo: newTopicDetails});
+
+    this.postNewSession(newSessionInfo);
+  }
+
+  postNewSession = (newSessionInfo) => {
+    let options = {
+      method: 'POST',
+      body: JSON.stringify(newSessionInfo),
+      headers: { "Content-Type": "application/json" }
+    };
+    fetch('http://localhost:8000/api/sessions', options)
+    .then(response => {
+      if(!response.ok) {
+        console.log('Error.');
+        throw new Error('Something went wrong'); //throw an error
+      }       
+      return response;
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      let session_id = data.id;
+      console.log(session_id);
+      this.postNewTopics(session_id);
+    })
+    .catch(err => console.log('Error with request'))
+  }
+  postNewTopics = (session_id) => {
+    let newSessionTopic = {
+      lesson_id: session_id,
+      student_id: parseInt(this.state.topicInfo.student_id),
+      topic_name: this.state.topicInfo.topic_name,
+      topic_content: this.state.topicInfo.topic_content
+    }
+    console.log(newSessionTopic);
+
+    let options = {
+      method: 'POST',
+      body: JSON.stringify(newSessionTopic),
+      headers: { "Content-Type": "application/json" }
+    };
+    fetch('http://localhost:8000/api/topics', options)
+    .then(response => {
+      if(!response.ok) {
+        console.log('Error.');
+        throw new Error('Something went wrong'); //throw an error
+      }       
+      return response;
+    })
+    .then(response => response.json())
+    .then(data => {
+      let session_id = data.id;
+      this.postNewTopics(session_id);
+    })
+    .catch(err => console.log('Error with request'))
+
+  }
+
+
+
   getTopicsForStudent = (e) => {
     e.preventDefault();
     let studentId = e.target.value;
-    console.log(studentId);
     this.handleGetTopics(studentId);
   }
   handleGetTopics = (id) => {
@@ -32,7 +113,6 @@ class NewLessonPage extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       this.setState({studentTopics: data});
     })
     .catch(err => {
@@ -62,7 +142,6 @@ class NewLessonPage extends Component {
 
   render() {
 
-    console.log(this.state.roster);
     let studentOptions = this.state.roster.map((student, i) =>
       <option key={i} value={student.id}>{student.firstName} {student.lastName}</option>
       )
@@ -77,9 +156,9 @@ class NewLessonPage extends Component {
       </header>
         
       <section className='lessonNotesForm'>
-        <form className='sessionNotes'>
+        <form className='sessionNotes' onSubmit = {e => {this.getFormValues(e)}}>
           <label htmlFor='stdName' className='notesField'>Student:&nbsp;
-            <select id='stdName' defaultValue={'DEFAULT'} onChange={e => {this.getTopicsForStudent(e)}}>
+            <select id='stdName' name='student' defaultValue={'DEFAULT'} onChange={e => {this.getTopicsForStudent(e)}}>
               <option value="DEFAULT" disabled>Choose a student</option>
               {studentOptions}
             </select>
@@ -93,7 +172,7 @@ class NewLessonPage extends Component {
         <button type='submit' className='saveNewNotes'>Save Lesson</button>      
   
         <label htmlFor='nextInfo' className='infoField'>Other info:
-          <textarea type='text' id='nextInfo' rows='4' placeholder='provide additional info such as next session date or proposed topics or other general reminders'></textarea>
+          <textarea type='text' id='nextInfo' name='nextInfo' rows='4' placeholder='provide additional info such as next session date or proposed topics or other general reminders'></textarea>
         </label>
       </form>
     </section>
