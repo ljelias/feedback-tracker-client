@@ -1,12 +1,13 @@
 
 .topicBanner { 
-  width: 99%;
-  max-width: 480px;
+  width: 95%;
+  max-width: 270px;
   margin: 24px auto 9px auto;
+  padding: 3px 9px;
   text-align: left;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
-  background-color: rgb(230, 229, 229);
+  background-color: tan;
 }
 .topicName {
   font-style: italic;
@@ -14,18 +15,31 @@
 .topicItem {
   text-align: center;
   border: 1px solid grey;
+  background-color: rgb(245, 245, 221);
   width: 85%;
-  max-width: 480px;
+  max-width: 360px;
   margin: 9px auto;
-  padding: 0 15px;
+  padding: 0 12px;
 }
 .topicItem:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .topicItemTitle {
-  font-size: 1.1rem;
-  margin: 9px 0;
+  font-size: 1rem;
+  margin: 6px 0;
 }
-.topicItem p {
-  margin: 12px 0;
+.topicItemP{
+  font-size: 0.8rem;
+  line-height: 1rem;
+  margin: 6px 0;
+}
+
+@media only screen and (min-width: 450px){
+  .topicBanner { 
+    max-width: 480px;
+    }
+  .topicItem {
+    width: 85%;
+    max-width: 420px;
+  }
 }

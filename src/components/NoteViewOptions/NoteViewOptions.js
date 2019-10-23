@@ -70,7 +70,7 @@ class NoteViewOptions extends Component {
   }
 
   render() {
-    console.log(this.props.studentTopics);
+    //console.log(this.props.studentTopics);
     let topicOptions = this.props.studentTopics.map((topic, i) =>
       <option key={i} value={topic.topic_name}>{topic.topic_name}</option>
       )

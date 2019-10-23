@@ -9,8 +9,8 @@ class ViewNotesByTopic extends Component {
     let items = this.props.topicResults;
     let topicList = items.map((item, i) => 
       <div className='topicItem' key={item.lesson_id}>
-        <h5 className='topicItemTitle'>From lesson: (date){item.lesson_id}</h5>
-        <p>{item.topic_content}</p>
+        <h5 className='topicItemTitle'>From lesson: {item.lesson_date}</h5>
+        <p className='topicItemP'>{item.topic_content}</p>
       </div>
       );
 

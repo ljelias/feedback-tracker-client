@@ -1,10 +1,13 @@
-header.top {
-  background-color: rgb(235, 235, 235);
+.dashTop {
+  background-color: rgb(3, 158, 158);
   text-align: center;
   width: 90%;
-  max-width: 500px;
-  margin: 6px auto;
-  padding: 3px;
+  margin: 0px auto 9px auto;
+  padding: 6px;
+}
+.dashbdHead {
+  color: rgb(70, 70, 70);
+  font-size: 1.6rem;
 }
 .addNewStd {
   border: 1px solid grey;
@@ -12,18 +15,8 @@ header.top {
   max-width: 500px;
   margin: 9px auto;
 }
-.addStudentFormHeader {
-  background-color: lightgrey;
-  padding: 0;
-}
 .addStudentFormHeader:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
-h3 {
-  text-align: center;
-  margin: 0;
-  padding: 9px 15px;
-  position: relative;
 }
 .arrowpointers {
   font-size: 2.7rem;
@@ -32,5 +25,23 @@ h3 {
   right: 0;
 }
 .italicSpan {
+  text-align: left;
   font-style: italic;
+}
+@media only screen and (min-width: 450px){
+  .dashTop {
+    width: 98%;
+    max-height: 80px;
+    margin: 0;
+    padding: 9px;
+  }
+  .App {
+    background-color: rgb(233, 233, 193);
+    border: 9px solid rgb(3, 158, 158);
+    width: 85%;
+    min-height: 600px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
 }

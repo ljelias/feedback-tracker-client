@@ -42,23 +42,23 @@ class NewStudentForm extends Component {
     return (
         <div className='addNewStd'>
           <header className='addStudentFormHeader'  onClick={e => this.props.showForm(false)} >
-            <h3><span className='italicspan'>Add a new student </span><span className='arrowpointers'> &#9652;</span></h3>
+            <h3 className='newStdHeader'><span className='italicspan'>Add new student </span><span className='arrowpointers'> &#9652;</span></h3>
           </header>   
           <form onSubmit = {e => {this.getFormValues(e)}}>
               <button type='submit' className='saveStd'>Save</button>
-              <label htmlFor='newStdFname' className='labeler'>First Name:&nbsp; 
-                <input type='text' id='newStdFname'  name='newStdFname' placeholder='Student first name' required />
-              </label>
-              <label htmlFor='newStdLname' className='labeler'>Last Name:&nbsp;
-                <input type='text' id='newStdLname' name='newStdLname' placeholder='Student last name' required />
-              </label>
-              <label htmlFor='newStdPhone' className='labeler'>Phone:&nbsp;
-                <input type='text' id='newStdPhone' name='newStdPhone' placeholder='Phone number' />
-              </label>
-              <label htmlFor='newStdEmail' className='labeler'>Email:&nbsp;
-                <input type='text' id='newStdEmail' name='newStdEmail' placeholder='Email address' />
-              </label>
-              <label htmlFor='newStdInfo' className='labeler'>Other info:&nbsp;
+              <label htmlFor='newStdFname' className='labeler'>First&nbsp;Name:&#160; <br/>
+                <input type='text' id='newStdFname'  name='newStdFname' className='smBox' placeholder='Student first name' required />
+              </label><br/>
+              <label htmlFor='newStdLname' className='labeler'>Last&nbsp;Name:&#160;<br/>
+                <input type='text' id='newStdLname' name='newStdLname' className='smBox' placeholder='Student last name' required />
+              </label><br/>
+              <label htmlFor='newStdPhone' className='labeler'>Phone:&#160;<br/> 
+                <input type='text' id='newStdPhone' name='newStdPhone' className='smBox' placeholder='Phone number' />
+              </label><br/>
+              <label htmlFor='newStdEmail' className='labeler'>Email:&#160;<br/>
+                <input type='text' id='newStdEmail' name='newStdEmail' className='smBox' placeholder='Email address' />
+              </label><br/>
+              <label htmlFor='newStdInfo' className='labeler'>Other&nbsp;info:&#160;<br/>
                 <textarea cols='4' maxLength='480' id='newStdInfo' className='vertAlignBottom' name='newStdInfo' placeholder='Misc notes'></textarea>
               </label>
           </form>

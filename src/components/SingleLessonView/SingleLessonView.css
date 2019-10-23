@@ -1,36 +1,44 @@
-header.lessonTitle {
-  background-color: rgb(235, 235, 235);
+.specificLessonTop {
+  background-color: rgb(3, 158, 158);
   text-align: center;
   width: 90%;
-  max-width: 500px;
-  margin: 6px auto;
-  padding: 6px;
+  margin: 9px auto;
+  padding: 2px;
 }
-.lessonTitle p {
+.toOv {
+  float: right;
+}
+.singleLessonTitle{
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+.singleLessonP{
   font-size: 1.2rem;
   font-weight: 500;
-  margin: 4px 0;
+  margin: 0;
 }
 .italic {
   font-style: italic;
   font-weight: 400;
 }
-
 .lessonTopicDiv {
   border: 1px solid grey;
+  border-radius: 9px;
   text-align: left;
   width: 85%;
   max-width: 480px;
-  margin: 9px auto;
+  margin: 15px auto;
 }
 .topicHeader {
-  background-color: lightgrey;
+  background-color: tan;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
   margin: 0;
   padding: 6px 9px;
 }
 .topicTitle {  
   font-size: 1rem;
-  background-color: lightgrey;
   text-align: left;    
   margin: 0;
   padding: 0;
@@ -39,19 +47,23 @@ header.lessonTitle {
   font-style: italic;
 }
 .topicDetails {
-  padding: 6px 12px;
+  padding: 9px 12px;
+  background-color: white;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
 }
 .topicDetails p {
-  margin: 0;
+  margin: 3px;
 }
 .nextSessionTitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0;
   padding: 0;
 }
 .nextSessionDetails {
   text-align: left;
-  border: 1px solid grey;
+  border: 2px solid grey;
+  background-color: white;
   width: 85%;
   max-width: 480px;
   margin: 6px auto;
@@ -59,4 +71,13 @@ header.lessonTitle {
 }
 .nextSessionDetails p {
   margin: 6px 0;
+}
+@media only screen and (min-width: 450px){
+  .specificLessonTop {
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 3px 0;
+  }
+  
 }

@@ -52,8 +52,8 @@ class TeacherDashboard extends Component {
       : <NewStudentFormOpener showForm={show => this.setShowAddForm(show)} />;
     return (
       <div>
-        <header className='top'>
-          <h2>Instructor Dashboard: My students</h2>
+        <header className='dashTop'>
+          <h2 className='dashbdHead'>Instructor Dashboard: My students</h2>
         </header>
         <main>
           <section className='addStudent'>

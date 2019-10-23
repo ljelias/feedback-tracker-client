@@ -33,8 +33,8 @@ class StudentDetailsEdit extends Component {
       }       
       return response;
     })
-    .then(response => console.log(response))
-    .then( this.props.resetStudent(updatedStudent))
+    .then(response => response.json())
+    .then((updatedStudent) => this.props.resetStudent(updatedStudent))
     .catch(err => console.log('Error with request'))
   }
 
@@ -42,10 +42,15 @@ class StudentDetailsEdit extends Component {
 
   render() {
     const student = this.props.currentStudent;
-
+    console.log(student);
+    
     return (
       <form className='studentDetailsEditor' onSubmit = {e => {this.getFormValues(e)}}>
         <button type='submit' className='updateStudent'>Save</button>
+        <button type='' className='cancelUpdate'
+         onClick={() => this.props.showEditing(false)}
+          >Cancel</button>
+
         <input className="editingStudent" type="text" name='stdFName' defaultValue={student.firstName} />
         <input className="editingStudent" type="text" name='stdLName' defaultValue={student.lastName} />
         <input className="editingStudent" type="text" name='stdPhone' defaultValue={student.phone} />

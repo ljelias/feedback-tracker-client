@@ -5,17 +5,19 @@ import './LandingPage.css';
 class LandingPage extends Component {
   render() {
     return (<>
-      <header className='top'>
-      <h1>Feedback Tracker Welcome</h1>
+      <header className='landingPageTop'>
+      <h1>Feedback Tracker</h1>
     </header>
     <main>
       <Link to='/teacher'>
-        <div className='tempGoTo'>Go to teacher dashboard</div>
+        <div className='tempGoTo'><p className='tempP'>Go to teacher dashboard</p></div>
       </Link>
       <section className='appInfo'>
         <div className='appInfo'>
-          <h2>About this app</h2>
-          <p>About this app, this and that, etc.</p>
+          <h2 className='trackerAbout'>Manage your student feedback!</h2>
+          <p className='appInfoP'>This app is for instructors, tutors, coaches or trainers.</p>
+          <p className='appInfoP'>The app lets you organize notes by category, and then later easily view notes based on a particular topic, issue, or benchmark.</p>
+          <p className='appInfoP'>The app also works well for instructors who use a rubric for grading student projects.</p>
         </div>
       </section>
     </main>

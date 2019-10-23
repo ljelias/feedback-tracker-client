@@ -1,33 +1,61 @@
-header.top {
-  background-color: rgb(235, 235, 235);
+.newLessonTop {
+  background-color: rgb(3, 158, 158);
   text-align: center;
   width: 90%;
-  max-width: 500px;
-  margin: 6px auto;
-  padding: 9px;
+  margin: 9px auto;
+  padding: 6px;
+  position: relative
+}
+.backToDash{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+.smallBox {
+  margin-bottom: 6px;
+  background-color: whitesmoke;
+  max-width: 300px;
+}
+.newLessonHead {
+  font-size: 1.6rem;
+  margin: 12px 0 6px 0;
 }
 .sessionNotes {
   border: 1px solid grey;
-  width: 85%;
-  max-width: 480px;
-  margin: 15px auto;
-  padding: 15px;
+  border-radius: 6px;
+  width: 94%;
+  margin: 12px auto;
+  padding: 9px;
 }
 #sessionDate {
   display: inline-block;
+  max-width: 270px;
 }
-
 #nextInfo{
-  min-width: 300px;
+  min-width: 270px;
+  margin-top: 3px;
+  background-color: whitesmoke;
 }
 .saveNewNotes {
   float: right;
+  margin-bottom: 9px;
 }
-.newTopic {
-  width: 95%;
-  max-width: 440px;
-  margin: 30px auto;
-  padding: 6px;
-  background-color:rgb(235, 235, 235);
+
+@media only screen and (min-width: 450px){
+  .newLessonTop {
+    width: 99%;
+    height: 80px;
+    padding: 6px;
+    margin: 0;
+  }
+  .sessionNotes {
+    max-width: 550px;
+  }  
+  #nextInfo{
+    width: 70%;
+    min-width: 350px;
+  }
+  
 }
+
 

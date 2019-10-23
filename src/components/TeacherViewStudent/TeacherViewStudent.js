@@ -21,7 +21,7 @@ class TeacherViewStudent extends Component {
   }
   setCurrentStudent(currentStudent){
     this.setState ({
-      currentStudent: {currentStudent}
+      currentStudent: currentStudent
     })
   }
 
@@ -53,7 +53,7 @@ class TeacherViewStudent extends Component {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        //console.log(data);
         this.setState({studentTopics: data});
       })
       .catch(err => {
@@ -69,11 +69,11 @@ class TeacherViewStudent extends Component {
     : <StudentDetailsDisplay showEditing={show => this.setEditStudent(show)} currentStudent={this.state.currentStudent} />;
 
     return (<>
-      <header className='top'>
+      <header className='stdTop'>
         <Link to={`/teacher`}>
           <button className='toDashboard'>Back to instructor dashboard</button>
         </Link>
-        <h2>Student Overview:</h2>
+        <h2 className='stdTopTitle'>Student Overview:</h2>
         <p className='stdName'>{this.state.currentStudent.firstName}&nbsp;{this.state.currentStudent.lastName}</p>
       </header>
       <section className='basicInfo'>

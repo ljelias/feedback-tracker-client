@@ -5,12 +5,12 @@ import NoteViewOptions from '../NoteViewOptions/NoteViewOptions';
 class StudentDashboard extends Component {
   render() {
     return (<>
-      <header class='top'>
-        <h2>Student Dashboard: My lessons</h2>
+      <header className='stdDashTop'>
+        <h2 className='stdDashTitle'>Student Dashboard: My lessons</h2>
       </header>
-      <section class='teacherInfo'>
-            <div class='teacherDetails'>
-              <h3>My instructor</h3>
+      <section className='teacherInfo'>
+            <div className='teacherDetails'>
+              <h3 className='teacherInfoTitle'>My instructor</h3>
               <p>First Name:&nbsp;teacher.firstName}</p>
               <p>Last Name:&nbsp;teacher.lastName}</p>
               <p>Phone:&nbsp;teacher.phone}</p>

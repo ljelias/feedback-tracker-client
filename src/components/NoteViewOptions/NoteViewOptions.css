@@ -1,14 +1,14 @@
 
 .optionTitle {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-align: center;
   margin: 0;
-  padding: 6px;
+  padding: 3px 0;
 }
 .viewOptions {
   text-align: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 510px;
   margin: 9px auto;
   padding: 0;
 }
@@ -16,8 +16,15 @@
 .viewByDate {
   display: inline-block;
   border: 1px solid grey;
+  border-radius: 9px;
+  background-color: rgb(245, 245, 221);
   width: 50%;
   max-width: 200px;
-  margin: 6px;
-  padding: 6px;
+  margin: 4px;
+  padding: 4px;
 }
+@media only screen and (min-width: 450px){
+  .optionTitle {
+    font-size: 1rem;
+    }
+  }

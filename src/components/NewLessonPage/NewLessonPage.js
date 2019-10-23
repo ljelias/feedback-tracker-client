@@ -147,31 +147,30 @@ class NewLessonPage extends Component {
       )
 
     return (<>
-      <header className='top'>
+      <header className='newLessonTop'>
         <Link to={`/teacher`}>
-          <button className='toDashboard'>Back to instructor dashboard</button>
+          <button className='backToDash'>Back to instructor dashboard</button>
         </Link>
-
-        <h2>New Lesson</h2>
+        <h2 className='newLessonHead'>New Lesson</h2>
       </header>
         
       <section className='lessonNotesForm'>
         <form className='sessionNotes' onSubmit = {e => {this.getFormValues(e)}}>
-          <label htmlFor='stdName' className='notesField'>Student:&nbsp;
-            <select id='stdName' name='student' defaultValue={'DEFAULT'} onChange={e => {this.getTopicsForStudent(e)}}>
+          <button type='submit' className='saveNewNotes'>Save Lesson</button>      
+
+          <label htmlFor='stdName'>Student:&nbsp;
+            <select id='stdName' className='smallBox' name='student' defaultValue={'DEFAULT'} onChange={e => {this.getTopicsForStudent(e)}}>
               <option value="DEFAULT" disabled>Choose a student</option>
               {studentOptions}
             </select>
-          </label>
-          <label htmlFor='sessionDate' className='notesField'>Date:&nbsp;
-            <input type='date' id='sessionDate' name='date' />
+          </label><br/>
+          <label htmlFor='sessionDate' >Date:&nbsp;
+            <input type='date' id='sessionDate' className='smallBox' name='date' />
           </label>
 
           <NewTopic studentTopics={this.state.studentTopics} />
 
-        <button type='submit' className='saveNewNotes'>Save Lesson</button>      
-  
-        <label htmlFor='nextInfo' className='infoField'>Other info:
+          <label htmlFor='nextInfo' className='infoField'>Other info:<br/>
           <textarea type='text' id='nextInfo' name='nextInfo' rows='4' placeholder='provide additional info such as next session date or proposed topics or other general reminders'></textarea>
         </label>
       </form>

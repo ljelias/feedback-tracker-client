@@ -83,11 +83,13 @@ class SingleLessonView extends Component {
 
 
     return (<>
-      <header className='lessonTitle'>
-        <h2>Lesson Summary</h2>
-        <p>Student: <span className='italic'>{student.firstName} {student.lastName}</span></p>
-        <p>Date: <span className='italic'>{lesson.lesson_date}</span></p>
-        <Link to={`/teacher/${student.id}`}><button>Back to student overview</button></Link>
+      <header className='specificLessonTop'>
+        <Link to={`/teacher/${student.id}`}>
+          <button classsName='toOv'>Back to student overview</button>
+        </Link>
+        <h2 className='singleLessonTitle'>Lesson Summary</h2>
+        <p className='singleLessonP'>Student: <span className='italic'>{student.firstName} {student.lastName}</span>
+        &#160;&#160;Date: <span className='italic'>{lesson.lesson_date}</span></p>
       </header>
 
       <section>

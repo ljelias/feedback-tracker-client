@@ -4,27 +4,36 @@
   max-width: 500px;
   margin: 9px auto;
 }
-
 .addStudentFormHeader {
-  background-color: lightgrey;
+  background-color: tan;
   padding: 0;
 }
-.addStudentFormHeader:hover {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
-
-h3 {
+.newStdHeader {
   text-align: center;
+  font-size: 1.1rem;
+  color: rgb(70, 70, 70);
   margin: 0;
   padding: 9px 15px;
   position: relative;
 }
+
 .arrowpointers {
   font-size: 2.7rem;
-  line-height: 1.7rem;
+  line-height: 2rem;
   position: absolute;
   right: 0;
+  bottom: 6px;
 }
 .italicSpan {
   font-style: italic;
 }
+@media only screen and (min-width: 450px){
+  .addNewStd {
+    width: 90%;
+    max-width: 360px;
+  }
+  .addStudentFormHeader:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 9px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  }

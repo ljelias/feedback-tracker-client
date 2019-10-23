@@ -1,17 +1,29 @@
 .studentDetailsEditor {
   border: 1px solid grey;
+  border-radius: 3px;
+  background-color: white;
   width: 85%;
-  max-width: 480px;
-  margin: 15px auto;
-  padding: 15px;
+  max-width: 420px;
+  margin: 12px auto;
+  padding: 6px 9px;
+}
+.updateStudent,
+.cancelUpdate {
+  float: right;
+  margin-bottom: 6px;
+  margin-left: 6px;
 }
 .updateStudent {
-  float: right;
+  background-color: tan;
 }
-input, textarea {
+.cancelUpdate {
+  background-color: coral;
+}
+.editingStudent {
   display: block;
-  margin-bottom: 9px;
+  margin-top: 15px;
+  background-color: whitesmoke;
 }
 textarea {
-  min-width: 300px;
+  min-width: 270px;
 }
