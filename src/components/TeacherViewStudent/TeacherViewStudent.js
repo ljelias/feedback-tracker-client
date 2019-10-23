@@ -76,19 +76,24 @@ class TeacherViewStudent extends Component {
         <h2 className='stdTopTitle'>Student Overview:</h2>
         <p className='stdName'>{this.state.currentStudent.firstName}&nbsp;{this.state.currentStudent.lastName}</p>
       </header>
-      <section className='basicInfo'>
-        <div className=''>
-          {studentInfoSection}
+      <main className='row'>
+        <div className='columnA'>
+          <Link to={`/lesson`}><button className='newLesson'>Create new lesson notes</button></Link>
+
+          <section className='basicInfo'>
+
+            <div className=''>
+              {studentInfoSection}
+            </div>
+          </section>
         </div>
-      </section>
-
-      <Link to={`/lesson`}><button className='newLesson'>Create new lesson notes</button></Link>
-
-      <div className='previousLessons'>
-        <h4 className='previousLessonsTitle'>View lesson notes</h4>
-        <NoteViewOptions studentId={this.state.currentStudent.id} studentTopics={this.state.studentTopics}/>
-      </div>
-
+        <div className='columnB'>
+          <div className='previousLessons'>
+            <h4 className='previousLessonsTitle'>View lesson notes</h4>
+            <NoteViewOptions studentId={this.state.currentStudent.id} studentTopics={this.state.studentTopics}/>
+          </div>
+        </div>
+      </main>
     </>
     );
   }

@@ -1,12 +1,13 @@
 .stdDashTop {
-  background-color: rgb(127, 243, 127);
+  background-color: rgb(3, 158, 158);
   text-align: center;
   width: 90%;
-  margin: 9px auto;
-  padding: 6px;
+  margin: 6px auto;
+  padding: 0 0 12px 0;
+  position: relative;
 }
 .stdDashtitle {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 .teacherDetails {
   text-align: left;
@@ -22,8 +23,10 @@
 }
 @media only screen and (min-width: 450px){
   .stdDashTop {
-    max-width: 600px;
-    margin: 18px auto;
-    padding: 6px;
+    width: 98%;
+    max-height: 80px;
+    margin: 0;
+    padding: 9px;
   }
+  
 }

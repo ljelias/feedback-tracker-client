@@ -85,24 +85,30 @@ class SingleLessonView extends Component {
     return (<>
       <header className='specificLessonTop'>
         <Link to={`/teacher/${student.id}`}>
-          <button classsName='toOv'>Back to student overview</button>
+          <button className='toDashboard'>Back to student overview</button>
         </Link>
-        <h2 className='singleLessonTitle'>Lesson Summary</h2>
-        <p className='singleLessonP'>Student: <span className='italic'>{student.firstName} {student.lastName}</span>
-        &#160;&#160;Date: <span className='italic'>{lesson.lesson_date}</span></p>
+
+        <h2 className='singleLessonTitle'>Single Lesson Summary</h2>
       </header>
 
-      <section>
-        {topicSet}
-      </section>
+      <main className='row2'>
 
-      <section className='nextSessionInfo'>
-        <div className='nextSessionDetails'>
-          <h4 className='nextSessionTitle'>Next Session:</h4>
-          <p>{lesson.next_session_info}</p>
-        </div>
-      </section>
-  
+        <section className='columnA2'>
+
+          <p className='singleLessonP'>Student:&nbsp;<span className='italic'>{student.firstName} {student.lastName}</span></p>
+
+          <div className='nextSessionDetails'>
+            <h4 className='nextSessionTitle'>Next Session:</h4>
+            <p>{lesson.next_session_info}</p>
+          </div>
+        </section>
+
+        <section className='columnB2'>
+        <p className='singleLessonP'>Topics for Lesson Date:&nbsp;<span className='italic'>{lesson.lesson_date}</span></p>
+
+          {topicSet}
+        </section>
+      </main>
     </>
     );
   }

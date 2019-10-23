@@ -9,6 +9,21 @@
   color: rgb(70, 70, 70);
   font-size: 1.6rem;
 }
+.newLesson2 {
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: tan;
+  color: rgb(55, 55, 55);
+  width: 70%;
+  max-width: 300px;
+  margin: 9px auto;
+  padding: 9px;
+  border-radius: 3px;
+}
+.newLesson2:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 9px 0 rgba(0, 0, 0, 0.15);
+}
+
 .addNewStd {
   border: 1px solid grey;
   width: 90%;
@@ -35,13 +50,40 @@
     margin: 0;
     padding: 9px;
   }
-  .App {
-    background-color: rgb(233, 233, 193);
-    border: 9px solid rgb(3, 158, 158);
-    width: 85%;
-    min-height: 600px;
-    padding: 0;
-    margin: 0 auto;
-  }
+}
+@media only screen and (min-width: 840px) {
+  
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  margin: 0;
+  padding-top: 15px;
+}
+.columnA3 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  min-width: 315px;
+  max-width: 525px;
+  overflow: auto;
+}
+.columnB3 {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  height: 100%;
+  min-width: 440px;
+  overflow-y: auto;
+  margin: 0;
+}
+.newLesson2 {
+  margin: 23px auto;
+}
 
 }

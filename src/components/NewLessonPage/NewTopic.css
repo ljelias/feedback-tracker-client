@@ -1,4 +1,4 @@
-.addNewTopic {
+.addNewTopicBtn {
   float: right;
   border-radius: 9px;
   padding: 3px 6px;
@@ -18,7 +18,7 @@
   margin: 9px 0;
   text-align: left;
 }
-.newTopic {
+.newTopicArea {
   width: 95%;
   margin: 18px auto;
   padding: 6px;
@@ -29,19 +29,19 @@
   display: inline-block;
   background-color: whitesmoke;
 }
-.notesField {
+.anotherNotesField {
   background-color: whitesmoke;
   margin-top: 9px;
 }
 
 @media only screen and (min-width: 450px){
-  .newTopic {
+  .newTopicArea {
     width: 65%;
     max-width: 440px;
   }
-  .notesField {
-    width: 80%;
-    max-width: 330px;
+  .anotherNotesField {
+    width: 90%;
+    max-width: 360px;
   }
   
 

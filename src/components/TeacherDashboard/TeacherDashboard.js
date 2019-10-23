@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './TeacherDashboard.css';
 import NewStudentForm from '../NewStudentForm/NewStudentForm.js';
 import Roster from '../Roster/Roster.js'
@@ -55,11 +57,13 @@ class TeacherDashboard extends Component {
         <header className='dashTop'>
           <h2 className='dashbdHead'>Instructor Dashboard: My students</h2>
         </header>
-        <main>
-          <section className='addStudent'>
+        <main className='row'>
+          <section className='columnA3 addStudent'>
+            <Link to={`/lesson`}><button className='newLesson2'>Create new lesson notes</button></Link>
+
             {addStdSection}
           </section>
-          <section className="showStudentList">
+          <section className="columnB3 showStudentList">
             <Roster students={this.state.roster} />
           </section>  
         </main>

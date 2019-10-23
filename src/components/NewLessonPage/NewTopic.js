@@ -28,7 +28,7 @@ class NewTopic extends Component {
     return (
       <div id='topicsArea'>
 
-        <div className='newTopic'>
+        <div className='newTopicArea'>
           <select name='optionA'  defaultValue={'DEFAULT'} onChange={e => {this.getOptionOther(e)}}>
             <option value='DEFAULT' disabled>Choose a topic</option>
             ${topicOptions}
@@ -37,7 +37,7 @@ class NewTopic extends Component {
           <div id='divA' style={{display:'none'}}>
             <label>Other topic: <input name='optionA2' className='otherBox'></input></label>
           </div>
-          <textarea name='infoA' rows='4' className='notesField'></textarea>
+          <textarea name='infoA' rows='4' className='anotherNotesField'></textarea>
         </div>
 
 
