@@ -13,8 +13,6 @@ class StudentDetailsEdit extends Component {
       misc_info: e.target.stdInfo.value 
     }
     let id = this.props.currentStudent.id;
-    console.log(id);
-    console.log(updatedStudent);
     this.props.showEditing(false);
     this.handlePatchStudentData(updatedStudent, id);
   }
@@ -39,10 +37,8 @@ class StudentDetailsEdit extends Component {
   }
 
 
-
   render() {
     const student = this.props.currentStudent;
-    console.log(student);
     
     return (
       <form className='studentDetailsEditor' onSubmit = {e => {this.getFormValues(e)}}>

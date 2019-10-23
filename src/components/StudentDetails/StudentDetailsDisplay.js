@@ -4,7 +4,6 @@ import './StudentDetailsDisplay.css';
 class StudentDetailsDisplay extends Component {
   render() {
     const student = this.props.currentStudent;
-    console.log(student);
 
     return (
       <div className='studentDetails' key={student.id}>

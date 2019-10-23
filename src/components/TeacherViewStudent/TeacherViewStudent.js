@@ -36,7 +36,6 @@ class TeacherViewStudent extends Component {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         this.setState({currentStudent: data});
       })
       .catch(err => {
@@ -53,7 +52,6 @@ class TeacherViewStudent extends Component {
       })
       .then(response => response.json())
       .then(data => {
-        //console.log(data);
         this.setState({studentTopics: data});
       })
       .catch(err => {

@@ -23,7 +23,6 @@ class SingleLessonView extends Component {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         this.setState({currentLesson: data});
         let student = data.student_id;
         this.getStudentInfo(student);
@@ -44,7 +43,6 @@ class SingleLessonView extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       this.setState({currentStudent: data});
     })
     .catch(err => {
@@ -60,7 +58,6 @@ class SingleLessonView extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       this.setState({lessonTopics: data});
     })
     .catch(err => {
@@ -98,7 +95,7 @@ class SingleLessonView extends Component {
           <p className='singleLessonP'>Student:&nbsp;<span className='italic'>{student.firstName} {student.lastName}</span></p>
 
           <div className='nextSessionDetails'>
-            <h4 className='nextSessionTitle'>Next Session:</h4>
+            <h4 className='nextSessionTitle'>Other Info:</h4>
             <p>{lesson.next_session_info}</p>
           </div>
         </section>

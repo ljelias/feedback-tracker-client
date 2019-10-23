@@ -1,13 +1,14 @@
 .dashTop {
   background-color: rgb(3, 158, 158);
   text-align: center;
-  width: 90%;
+  width: 100%;
   margin: 0px auto 9px auto;
-  padding: 6px;
+  padding: 6px 0;
 }
 .dashbdHead {
   color: rgb(70, 70, 70);
   font-size: 1.6rem;
+  margin: 0 6px;
 }
 .newLesson2 {
   font-size: 1rem;

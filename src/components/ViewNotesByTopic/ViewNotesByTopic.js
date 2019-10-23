@@ -5,7 +5,6 @@ class ViewNotesByTopic extends Component {
 
 
   render() {
-    console.log(this.props.topicResults);
     let items = this.props.topicResults;
     let topicList = items.map((item, i) => 
       <div className='topicItem' key={item.lesson_id}>

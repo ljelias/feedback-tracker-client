@@ -1,8 +1,8 @@
 .landingPageTop {
   text-align: center;
   background-color: rgb(3, 158, 158);
-  width: 90%;
-  margin: 9px auto;
+  width: 100%;
+  margin: 0px auto 9px auto;
   padding: 6px;
 }
 h1 {

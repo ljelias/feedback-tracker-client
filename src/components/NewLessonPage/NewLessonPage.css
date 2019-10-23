@@ -1,15 +1,15 @@
 .newLessonTop {
   background-color: rgb(3, 158, 158);
   text-align: center;
-  width: 90%;
-  margin: 9px auto;
-  padding: 6px;
+  width: 100%;
+  margin: 0 auto 9px auto;
+  padding: 9px;
   position: relative
 }
 .backToDash{
   position: absolute;
   top: 2px;
-  right: 2px;
+  right: 12px;
 }
 .smallBox {
   margin-bottom: 6px;
@@ -18,7 +18,7 @@
 }
 .newLessonHead {
   font-size: 1.6rem;
-  margin: 12px 0 6px 0;
+  margin: 15px 0 9px 0;
 }
 .sessionNotes {
   border: 1px solid grey;

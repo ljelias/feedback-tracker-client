@@ -43,7 +43,6 @@ class NoteViewOptions extends Component {
   getOptionValue = (e) => {
     e.preventDefault();
     let selection = e.target.value;
-    console.log(selection);
     this.setState({chosenTopic: selection}); 
     this.handleGetTopic(selection)
   }

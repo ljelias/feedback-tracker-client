@@ -12,7 +12,6 @@ class NewStudentForm extends Component {
       email: e.target.newStdEmail.value,
       misc_info: e.target.newStdInfo.value 
     }
-    console.log(newStudent);
     this.handlePostNewStudent(newStudent);
   }
 

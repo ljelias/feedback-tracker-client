@@ -1,14 +1,20 @@
 .specificLessonTop {
   background-color: rgb(3, 158, 158);
   text-align: center;
-  width: 90%;
-  margin: 6px auto;
-  padding: 0 0 12px 0;
+  width: 100%;
+  margin: 0 auto 9px auto;
+  padding: 9px 0;
+  position: relative;
 }
+.toDashboard {
+  position: absolute;
+  top: 1px;
+  right: 3px;
+}
+
 .singleLessonTitle{
   font-size: 1.6rem;
   font-weight: 700;
-  margin: 15px;
 }
 .singleLessonP{
   font-size: 1.2rem;
