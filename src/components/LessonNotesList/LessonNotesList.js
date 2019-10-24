@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './LessonNotesList.css';
 
+
 class LessonNotesList extends Component {
 
   render() {

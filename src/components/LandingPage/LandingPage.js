@@ -5,7 +5,7 @@ import './LandingPage.css';
 class LandingPage extends Component {
   render() {
     return (<>
-      <header className='landingPageTop'>
+    <header className='landingPageTop'>
       <h1>Feedback Tracker</h1>
     </header>
     <main>
@@ -29,5 +29,5 @@ class LandingPage extends Component {
 export default LandingPage;
 
 /*
-      <div className='loginForm'><em>(Future login box)</em></div>
+  <div className='loginForm'><em>(Future login box)</em></div>
 */

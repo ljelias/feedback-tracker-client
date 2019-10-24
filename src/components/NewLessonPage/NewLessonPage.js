@@ -32,16 +32,19 @@ class NewLessonPage extends Component {
     }
 
     let newTopicDetails = {
+      lesson_date: e.target.date.value,
       student_id: e.target.student.value,
       topic_name: topicName,
       topic_content: e.target.infoA.value
     }
     this.setState({topicInfo: newTopicDetails});
-
+    console.log(newTopicDetails);
     this.postNewSession(newSessionInfo);
   }
 
   postNewSession = (newSessionInfo) => {
+    console.log(newSessionInfo);
+
     let options = {
       method: 'POST',
       body: JSON.stringify(newSessionInfo),
@@ -65,8 +68,10 @@ class NewLessonPage extends Component {
     .catch(err => console.log('Error with request'))
   }
   postNewTopics = (session_id) => {
+    console.log(session_id);
     let newSessionTopic = {
       lesson_id: session_id,
+      lesson_date: this.state.topicInfo.lesson_date,
       student_id: parseInt(this.state.topicInfo.student_id),
       topic_name: this.state.topicInfo.topic_name,
       topic_content: this.state.topicInfo.topic_content
@@ -88,8 +93,7 @@ class NewLessonPage extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      let session_id = data.id;
-      this.postNewTopics(session_id);
+      console.log(data);
     })
     .catch(err => console.log('Error with request'))
 
