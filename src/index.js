@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
+/*
 const ROSTER = [
   { 'id': '1', 'first_name': 'Sue', 'last_name': 'Student', 'phone': '651-777-2222', 'email': 's.student@email.com', 'misc_info': 'skype: SSSkyper'},
   { 'id': '2', 'first_name': 'Joe', 'last_name': 'Estudiante', 'phone': '612-888-3333', 'email': 'joee@email.com', 'misc_info': 'alt phone: 612-888-3334'},
@@ -11,12 +12,12 @@ const ROSTER = [
   { 'id': '4', 'first_name': 'Amy', 'last_name': 'Anders', 'phone': '218-333-7777', 'email': 'a.anders@email.com', 'misc_info': 'on leave June 2020'},
   { 'id': '5', 'first_name': 'Ana', 'last_name': 'Manzana', 'phone': '763-555-6666', 'email': 'manzana7@email.com', 'misc_info': 'monthly progress reports to HR@email.com'},
 ];
-
+*/
 
 
 ReactDOM.render(
   <BrowserRouter>
-    <App roster={ROSTER}/>
+    <App />
   </BrowserRouter>, document.getElementById('root'));
   
 //same as: document.querySelector('#root')

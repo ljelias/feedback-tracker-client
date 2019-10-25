@@ -1,10 +1,13 @@
 .newLessonTop {
-  background-color: rgb(3, 158, 158);
+  background-color: rgba(3, 158, 158, 0.7);
   text-align: center;
   width: 100%;
   margin: 0 auto 9px auto;
   padding: 9px;
-  position: relative
+  position: relative;
+  height: 60px;
+  max-height: 60px;
+  box-shadow: 0 8px 6px -6px black;
 }
 .backToDash{
   position: absolute;
@@ -19,6 +22,7 @@
 .newLessonHead {
   font-size: 1.6rem;
   margin: 15px 0 9px 0;
+  color: rgb(70, 70, 70);
 }
 .sessionNotes {
   border: 1px solid grey;

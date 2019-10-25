@@ -1,8 +1,4 @@
-.addNewStd {
-  border: 1px solid grey;
-  width: 90%;
-  margin: 9px auto;
-}
+
 .addStudentFormHeader {
   background-color: tan;
   padding: 0;
@@ -14,6 +10,9 @@
   margin: 0;
   padding: 9px 15px;
   position: relative;
+  border: 1px solid rgb(231, 231, 231);
+  border-style: outset;
+
 }
 .arrowpointers {
   font-size: 2.7rem;

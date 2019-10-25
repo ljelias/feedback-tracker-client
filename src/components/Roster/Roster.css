@@ -7,15 +7,23 @@
   padding: 9px;
   background-color: white;
   text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .rosterItem:hover {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px 6px rgba(0, 0, 0, 0.2);
 }
 .stdLink {
   color: rgb(82, 82, 82);
   margin: 0;
   padding: 9px 15px;
 }
+
+@media only screen and (min-width: 840px) {
+  .rosterItem {
+    margin: 15px auto;
+  }
+}
+
 .div1 {
   background-color: rgb(186, 195, 255);
 }

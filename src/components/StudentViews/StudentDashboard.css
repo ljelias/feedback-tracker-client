@@ -1,10 +1,12 @@
 .stdDashTop {
-  background-color: rgb(3, 158, 158);
+  background-color: rgba(3, 158, 158, 0.7);
   text-align: center;
   width: 90%;
+  max-height: 60px;
   margin: 6px auto;
   padding: 0 0 12px 0;
   position: relative;
+  box-shadow: 0 8px 6px -6px black;
 }
 .stdDashtitle {
   font-size: 1.6rem;
