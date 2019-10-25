@@ -13,6 +13,8 @@ class NewLessonPage extends Component {
       studentTopics: [],
       sessionInfo: {},
       topicInfo: {},
+      linkId: '',
+      submitted: false,
       error: null
     };
   }
@@ -94,11 +96,17 @@ class NewLessonPage extends Component {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      let student = data.student_id;
+      this.showLinkToStudentPage(student);
     })
     .catch(err => console.log('Error with request'))
 
   }
 
+  showLinkToStudentPage = (studentId) => {
+    this.setState({linkId: studentId});
+    this.setState({submitted: true});
+  }
 
 
   getTopicsForStudent = (e) => {
@@ -147,8 +155,12 @@ class NewLessonPage extends Component {
   render() {
 
     let studentOptions = this.state.roster.map((student, i) =>
-      <option key={i} value={student.id}>{student.firstName} {student.lastName}</option>
+      <option key={i} value={student.id}>{student.first_name} {student.last_name}</option>
       )
+
+    let bottomLink = this.state.submitted 
+      ? <Link to={`/teacher/${this.state.linkId}`}><div className='result'>Successfully submitted!<div className='goToStudent'>Go to the student overview page</div></div></Link>
+      : <div></div>
 
     return (<>
       <header className='newLessonTop'>
@@ -178,6 +190,7 @@ class NewLessonPage extends Component {
           <textarea type='text' id='nextInfo' name='nextInfo' rows='4' placeholder='provide additional info such as next session date or proposed topics or other general reminders'></textarea>
         </label>
       </form>
+      {bottomLink}
     </section>
   </>
       );

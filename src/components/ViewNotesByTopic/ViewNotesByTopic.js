@@ -3,12 +3,36 @@ import './ViewNotesByTopic.css';
 
 class ViewNotesByTopic extends Component {
 
+/*
+  convertDate = (itemDate) => {
+    let rawDate = new Date(itemDate);
+    console.log(rawDate);
+    let day = rawDate.getDate();
+    console.log(day);
+    let dday = String(day).padStart(2, '0');
+    console.log(dday);
+    let month = rawDate.getMonth()+1;
+    let mmonth = String(month).padStart(2, '0');
+    console.log(mmonth);
+    let year = rawDate.getFullYear();
+    let lessonDate = year+'.'+mmonth+'.'+dday;
+    console.log(lessonDate);
+    return lessonDate;
+  }
+*/
+  convertDate2 = (itemDate) => {
+    let rawDate = new Date(itemDate);
+    let arr = rawDate.toString().split(' ');
+    let dateString = arr[0] + ' ' + arr[1] + ' ' + arr[2] + ' ' + arr[3];
+    return dateString;
+  }
 
   render() {
     let items = this.props.topicResults;
+
     let topicList = items.map((item, i) => 
       <div className='topicItem' key={item.lesson_id}>
-        <h5 className='topicItemTitle'>From lesson: {item.lesson_date}</h5>
+        <h5 className='topicItemTitle'>From lesson: {this.convertDate2(item.lesson_date)}</h5>
         <p className='topicItemP'>{item.topic_content}</p>
       </div>
       );

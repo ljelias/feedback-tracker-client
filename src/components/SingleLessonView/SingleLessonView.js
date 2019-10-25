@@ -64,6 +64,12 @@ class SingleLessonView extends Component {
       this.setState({ error: err.message });
     });  
   }
+  convertDate2 = (itemDate) => {
+    let rawDate = new Date(itemDate);
+    let arr = rawDate.toString().split(' ');
+    let dateString = arr[0] + ' ' + arr[1] + ' ' + arr[2] + ' ' + arr[3];
+    return dateString;
+  }
 
   
 
@@ -92,7 +98,7 @@ class SingleLessonView extends Component {
 
         <section className='columnA2'>
 
-          <p className='singleLessonP'>Student:&nbsp;<span className='italic'>{student.firstName} {student.lastName}</span></p>
+          <p className='singleLessonP'>Student:&nbsp;<span className='italic'>{student.first_name} {student.last_name}</span></p>
 
           <div className='nextSessionDetails'>
             <h4 className='nextSessionTitle'>Other Info:</h4>
@@ -101,7 +107,7 @@ class SingleLessonView extends Component {
         </section>
 
         <section className='columnB2'>
-        <p className='singleLessonP'>Topics for Lesson Date:&nbsp;<span className='italic'>{lesson.lesson_date}</span></p>
+        <p className='singleLessonP'>Topics for Lesson Date:&nbsp;<span className='italic'>{this.convertDate2(lesson.lesson_date)}</span></p>
 
           {topicSet}
         </section>

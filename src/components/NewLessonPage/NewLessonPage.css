@@ -40,6 +40,21 @@
   float: right;
   margin-bottom: 9px;
 }
+.result {
+  font-size: 1.3rem;
+  line-height: 2.7rem;
+  color: grey;
+  width: 45%;
+  margin: 0px auto;
+}
+.goToStudent{
+  background-color: aquamarine;
+  border: 2px solid lightgray;
+  border-radius: 27px;
+}
+.goToStudent:hover {
+  border: 3px solid grey;
+}
 
 @media only screen and (min-width: 450px){
   .newLessonTop {

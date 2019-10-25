@@ -47,11 +47,11 @@ class StudentDetailsEdit extends Component {
          onClick={() => this.props.showEditing(false)}
           >Cancel</button>
 
-        <input className="editingStudent" type="text" name='stdFName' defaultValue={student.firstName} />
-        <input className="editingStudent" type="text" name='stdLName' defaultValue={student.lastName} />
+        <input className="editingStudent" type="text" name='stdFName' defaultValue={student.first_name} />
+        <input className="editingStudent" type="text" name='stdLName' defaultValue={student.last_name} />
         <input className="editingStudent" type="text" name='stdPhone' defaultValue={student.phone} />
         <input className="editingStudent" type="text" name='stdEmail' defaultValue={student.email} />
-        <textarea className="editingStudent" type="text" rows='4' name='stdInfo' defaultValue={student.miscInfo}></textarea>
+        <textarea className="editingStudent" type="text" rows='4' name='stdInfo' defaultValue={student.misc_info}></textarea>
       </form>
     );
   }

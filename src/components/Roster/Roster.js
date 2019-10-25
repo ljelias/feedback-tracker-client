@@ -17,7 +17,7 @@ class Roster extends Component {
     const allStudents = students.map(student => 
       <div className='rosterItem' key={student.id}>  
         <Link to={`/teacher/${student.id}`}>
-          <h3 className='stdLink'>{student.firstName}&nbsp;{student.lastName}</h3>
+          <h3 className='stdLink'>{student.first_name}&nbsp;{student.last_name}</h3>
         </Link>
       </div>
       )
