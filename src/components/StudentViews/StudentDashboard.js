@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import './StudentDashboard.css';
-//import NoteViewOptions from '../NoteViewOptions/NoteViewOptions';
 
 class StudentDashboard extends Component {
 
   render() {
 
-    //let stdId = this.props.match.params.student;
 
     return (<>
       <header className='stdDashTop'>
@@ -33,4 +31,3 @@ class StudentDashboard extends Component {
 
 export default StudentDashboard;     
 
-// <NoteViewOptions studentId={this.props.match.params.student} />

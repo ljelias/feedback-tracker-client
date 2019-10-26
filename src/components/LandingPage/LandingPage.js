@@ -28,6 +28,3 @@ class LandingPage extends Component {
 
 export default LandingPage;
 
-/*
-  <div className='loginForm'><em>(Future login box)</em></div>
-*/

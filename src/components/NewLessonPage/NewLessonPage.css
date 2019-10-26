@@ -55,6 +55,8 @@
   background-color: aquamarine;
   border: 2px solid lightgray;
   border-radius: 27px;
+  width: 55%;
+  margin: 3px auto;
 }
 .goToStudent:hover {
   border: 3px solid grey;

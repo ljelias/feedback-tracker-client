@@ -17,7 +17,7 @@
 .newLesson2 {
   font-size: 1rem;
   font-weight: 600;
-  background-color: tan;
+  background-color: rgba(210, 180, 140, 0.6);
   color: rgb(55, 55, 55);
   width: 70%;
   max-width: 300px;
@@ -27,6 +27,9 @@
 }
 .newLesson2:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 9px 0 rgba(0, 0, 0, 0.3);
+}
+.nL2 {
+  color: rgb(55,55,55);
 }
 
 .addNewStd {

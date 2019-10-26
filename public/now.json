@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "alias": "ljelias-feedbacktracker",
+  "name": "feedbacktracker",
+  "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      }
+  ]
+}

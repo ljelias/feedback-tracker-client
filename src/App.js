@@ -37,12 +37,4 @@ class App extends Component {
 
 export default App;
 
-/*
-      <LandingPage />
-      <TeacherDashboard />
-      <TeacherViewStudent />
-      <StudentDashboard />
-      <NewLessonPage />
-      <SingleLessonView />
-*/
 

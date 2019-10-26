@@ -4,12 +4,6 @@ import './Roster.css';
 
 class Roster extends Component {
 
-// let colors = ['red','blue','green','yellow','cyan','orange'];
-// document.getElementsByClassName('rosterItem').each(function(){
-//    let new_color = colors[Math.floor(Math.random()*colors.length)];
-//    $(this).css('background-color', new_color);
-//  });
-
 
   render() {
     const students = this.props.students;

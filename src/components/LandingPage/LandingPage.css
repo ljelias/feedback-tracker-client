@@ -16,7 +16,7 @@ h1 {
   font-weight: 600;
   color: rgb(55,55,55);
   border: 1px solid grey;
-  background-color: tan;
+  background-color: rgba(210, 180, 140, 0.6);
   width: 75%;
   max-width: 330px;
   margin: 24px auto;

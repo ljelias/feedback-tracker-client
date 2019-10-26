@@ -59,8 +59,7 @@ class TeacherDashboard extends Component {
         </header>
         <main className='row'>
           <section className='columnA3 addStudent'>
-            <Link to={`/lesson`}><button className='newLesson2'>Create new lesson notes</button></Link>
-
+            <button className='newLesson2'><Link className='nL2' to={`/lesson`}>Create new lesson notes</Link></button>
             {addStdSection}
           </section>
           <section className="columnB3 showStudentList">

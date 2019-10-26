@@ -7,7 +7,7 @@
   text-align: left;
   font-size: 1rem;
   font-weight: 500;
-  background-color: tan;
+  background-color: rgba(210, 180, 140, 0.6);
 }
 .topicName {
   font-style: italic;
