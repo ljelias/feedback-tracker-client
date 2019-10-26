@@ -7,15 +7,15 @@
 
 ## Screen shots of the app:
 
-![screenshot of teacher dashboard](feedbackTchrDash.png)
-![screenshot of single student record](feedbackTchrDash.png)
+![screenshot of teacher dashboard](feedbackTeacherDash.png)
+
+
+![screenshot of single student record](feedbackTchrVStd3.png)
 
 --------------------------------------------------
 
 ### This app is built with: 
-- html
-- css
-- javascript
+- react
 
 ### Link to live app:
 https://feedbacktracker.ljelias.now.sh
