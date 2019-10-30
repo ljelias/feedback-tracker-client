@@ -13,9 +13,7 @@ describe('ViewNotesByTopic component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<ViewNotesByTopic />)
-      .toJSON();
+    const tree = renderer.create(<ViewNotesByTopic />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

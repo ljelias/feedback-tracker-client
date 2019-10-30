@@ -13,9 +13,7 @@ describe('LandingPage component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<LandingPage />)
-      .toJSON();
+    const tree = renderer.create(<LandingPage />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

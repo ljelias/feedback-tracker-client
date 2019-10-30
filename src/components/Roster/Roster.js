@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Roster.css';
 
 class Roster extends Component {
+  static defaultProps = { students: [] };
 
 
   render() {

@@ -13,10 +13,7 @@ describe('TeacherViewStudent component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<TeacherViewStudent />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();  
+    expect(renderer.create(<TeacherViewStudent />).toJSON()).toMatchSnapshot()
   });
 
 

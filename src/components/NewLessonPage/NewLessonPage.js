@@ -45,14 +45,14 @@ class NewLessonPage extends Component {
   }
 
   postNewSession = (newSessionInfo) => {
-    console.log(newSessionInfo);
+   // const {API_BASE_URL} = require('../../config.js');
 
     let options = {
       method: 'POST',
       body: JSON.stringify(newSessionInfo),
       headers: { "Content-Type": "application/json" }
     };
-    fetch('http://localhost:8000/api/sessions', options)
+    fetch(`http://localhost:8000/api/sessions`, options)
     .then(response => {
       if(!response.ok) {
         console.log('Error.');
@@ -115,6 +115,8 @@ class NewLessonPage extends Component {
     this.handleGetTopics(studentId);
   }
   handleGetTopics = (id) => {
+   // const {API_BASE_URL} = require('../../config.js');
+
     fetch(`http://localhost:8000/api/topics/${id}`)
     .then(response => {
       if(!response.ok) {

@@ -13,9 +13,7 @@ describe('Roster component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<Roster />)
-      .toJSON();
+    const tree = renderer.create(<Roster />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

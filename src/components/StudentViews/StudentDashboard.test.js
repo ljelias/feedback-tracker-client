@@ -13,9 +13,7 @@ describe('StudentDashboard component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<StudentDashboard />)
-      .toJSON();
+    const tree = renderer.create(<StudentDashboard />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

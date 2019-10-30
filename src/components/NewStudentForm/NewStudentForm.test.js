@@ -13,9 +13,7 @@ describe('NewStudentForm component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<NewStudentForm />)
-      .toJSON();
+    const tree = renderer.create(<NewStudentForm />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

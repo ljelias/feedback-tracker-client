@@ -16,12 +16,14 @@ class NewStudentForm extends Component {
   }
 
   handlePostNewStudent = (newStudent) => {
+    //const {API_BASE_URL} = require('../../config.js');
+
     let options = {
       method: 'POST',
       body: JSON.stringify(newStudent),
       headers: { "Content-Type": "application/json" }
     };
-    fetch('http://localhost:8000/api/students', options)
+    fetch(`http://localhost:8000/api/students`, options)
     .then(response => {
       if(!response.ok) {
         console.log('Error.');

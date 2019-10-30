@@ -13,9 +13,7 @@ describe('LessonNotesList component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<LessonNotesList />)
-      .toJSON();
+    const tree = renderer.create(<LessonNotesList />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

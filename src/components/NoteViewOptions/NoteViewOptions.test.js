@@ -13,9 +13,7 @@ describe('NoteViewOptions component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<NoteViewOptions />)
-      .toJSON();
+    const tree = renderer.create(<NoteViewOptions />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

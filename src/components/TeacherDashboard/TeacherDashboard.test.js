@@ -13,9 +13,7 @@ describe('TeacherDashboard component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<TeacherDashboard />)
-      .toJSON();
+    const tree = renderer.create(<TeacherDashboard />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

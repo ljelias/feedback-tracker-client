@@ -13,9 +13,7 @@ describe('SingleLessonView component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<SingleLessonView />)
-      .toJSON();
+    const tree = renderer.create(<SingleLessonView />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

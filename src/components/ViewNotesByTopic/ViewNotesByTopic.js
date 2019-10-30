@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './ViewNotesByTopic.css';
 
 class ViewNotesByTopic extends Component {
+  static defaultProps = { topicResults: [] };
+
 
   convertDate2 = (itemDate) => {
     let rawDate = new Date(itemDate);

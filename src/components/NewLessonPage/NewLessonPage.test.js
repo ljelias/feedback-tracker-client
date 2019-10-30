@@ -13,9 +13,7 @@ describe('NewLessonPage component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<NewLessonPage />)
-      .toJSON();
+    const tree = renderer.create(<NewLessonPage />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 

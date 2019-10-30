@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.css';
 
 import LandingPage from './components/LandingPage/LandingPage.js';
@@ -24,12 +24,17 @@ class App extends Component {
 
     return (
       <main className='App'>
-        <Route exact path='/' component={LandingPage} />
-        <Route exact path='/teacher' component={TeacherDashboard} />
-        <Route path='/teacher/:student' component={TeacherViewStudent} />
-        <Route path='/student/:student' component={StudentDashboard} />
-        <Route exact path='/lesson' component={NewLessonPage} />
-        <Route path='/lessons/:lesson' component={SingleLessonView} />
+        <Router>
+          <Switch>
+            <Route exact path='/' component={LandingPage} />
+            <Route exact path='/teacher' component={TeacherDashboard} />
+            <Route path='/teacher/:student' component={TeacherViewStudent} />
+            <Route path='/student/:student' component={StudentDashboard} />
+            <Route exact path='/lesson' component={NewLessonPage} />
+            <Route path='/lessons/:lesson' component={SingleLessonView} />
+          </Switch>
+        </Router>
+
       </main>
     );
   }

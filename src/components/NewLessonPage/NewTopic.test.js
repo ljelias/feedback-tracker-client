@@ -13,9 +13,7 @@ describe('NewTopic component', () => {
   });
   
   it('renders the UI as expected', () => {
-    const tree = renderer
-      .create(<NewTopic />)
-      .toJSON();
+    const tree = renderer.create(<NewTopic />).toJSON();
     expect(tree).toMatchSnapshot();  
   });
 
