@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import config from '../../config.js';
 import './NewLessonPage.css';
@@ -45,7 +46,6 @@ class NewLessonPage extends Component {
   }
 
   postNewSession = (newSessionInfo) => {
-
     let options = {
       method: 'POST',
       body: JSON.stringify(newSessionInfo),
@@ -66,6 +66,7 @@ class NewLessonPage extends Component {
     })
     .catch(err => console.log('Error with request'))
   }
+
   postNewTopics = (session_id) => {
     let newSessionTopic = {
       lesson_id: session_id,
@@ -91,17 +92,11 @@ class NewLessonPage extends Component {
     .then(response => response.json())
     .then(data => {
       let student = data.student_id;
-      this.showLinkToStudentPage(student);
+      this.props.history.push(`/teacher/${student}`);
     })
     .catch(err => console.log('Error with request'))
 
   }
-
-  showLinkToStudentPage = (studentId) => {
-    this.setState({linkId: studentId});
-    this.setState({submitted: true});
-  }
-
 
   getTopicsForStudent = (e) => {
     e.preventDefault();
@@ -153,10 +148,6 @@ class NewLessonPage extends Component {
       <option key={i} value={student.id}>{student.first_name} {student.last_name}</option>
       )
 
-    let bottomLink = this.state.submitted 
-      ? <Link to={`/teacher/${this.state.linkId}`}><div className='result'>Successfully submitted!<div className='goToStudent'>Go to the student overview page</div></div></Link>
-      : <div></div>
-
     return (<>
       <header className='newLessonTop'>
         <Link to={`/teacher`}>
@@ -185,14 +176,14 @@ class NewLessonPage extends Component {
           <textarea type='text' id='nextInfo' name='nextInfo' rows='4' placeholder='provide additional info such as next session date or proposed topics or other general reminders'></textarea>
         </label>
       </form>
-      {bottomLink}
+      
     </section>
   </>
       );
   }
 }
 
-export default NewLessonPage;
+export default withRouter(NewLessonPage);
 
 /*
 

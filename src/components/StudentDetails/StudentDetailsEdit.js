@@ -45,8 +45,7 @@ class StudentDetailsEdit extends Component {
       <form className='studentDetailsEditor' onSubmit = {e => {this.getFormValues(e)}}>
         <button type='submit' className='updateStudent'>Save</button>
         <button type='' className='cancelUpdate'
-         onClick={() => this.props.showEditing(false)}
-          >Cancel</button>
+         onClick={() => this.props.showEditing(false)}>Cancel</button>
 
         <input className="editingStudent" type="text" name='stdFName' defaultValue={student.first_name} />
         <input className="editingStudent" type="text" name='stdLName' defaultValue={student.last_name} />

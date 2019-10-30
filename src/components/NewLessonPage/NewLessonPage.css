@@ -14,7 +14,7 @@
 }
 .smallBox {
   margin-bottom: 6px;
-  background-color: whitesmoke;
+  background-color: rgb(250, 250, 250);
   max-width: 300px;
 }
 .newLessonHead {
@@ -29,40 +29,20 @@
   width: 94%;
   margin: 18px auto 12px auto;
   padding: 9px;
+  background-color: white;
 }
 #sessionDate {
   display: inline-block;
   max-width: 270px;
 }
 #nextInfo{
-  min-width: 270px;
+  width: 95%;
   margin-top: 3px;
-  background-color: whitesmoke;
+  background-color: rgb(250, 250, 250);
 }
 .saveNewNotes {
   float: right;
   margin-bottom: 9px;
-}
-.result {
-  font-size: 1.3rem;
-  line-height: 1.3rem;
-  font-style: italic;
-  color: rgb(97, 97, 97);
-  width: 80%;
-  margin: 0px auto;
-}
-.goToStudent{
-  background-color: rgb(45, 223, 199);
-  border: 2px solid rgb(151, 151, 151);
-  font-style: normal;
-  border-radius: 27px;
-  width: 80%;
-  margin: 6px auto;
-  padding: 6px 3px;
-
-}
-.goToStudent:hover {
-  border: 3px solid grey;
 }
 
 @media only screen and (min-width: 450px){
@@ -72,12 +52,8 @@
     margin: 0;
     padding: 9px 0;
   }
-  .sessionNotes {
-    max-width: 550px;
-  }  
   #nextInfo{
-    width: 70%;
-    min-width: 350px;
+    max-width: 500px;
   }
   
 }

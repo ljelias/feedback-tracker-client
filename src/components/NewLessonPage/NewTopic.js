@@ -21,13 +21,13 @@ class NewTopic extends Component {
       <div id='topicsArea'>
 
         <div className='newTopicArea'>
-          <select name='optionA'  defaultValue={'DEFAULT'} onChange={e => {this.getOptionOther(e)}}>
+          <select className='topicOption' name='optionA'  defaultValue={'DEFAULT'} onChange={e => {this.getOptionOther(e)}}>
             <option value='DEFAULT' disabled>Choose a topic</option>
             ${topicOptions}
             <option name='optionA' value='Other'>Other</option>
           </select>
           <div id='divA' style={{display:'none'}}>
-            <label>Other topic: <input name='optionA2' className='otherBox'></input></label>
+            <label className='otherLabel'>Other: <input name='optionA2' className='otherBox'></input></label>
           </div>
           <textarea name='infoA' rows='4' className='anotherNotesField'></textarea>
         </div>
