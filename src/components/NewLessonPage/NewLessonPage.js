@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../config.js';
 import './NewLessonPage.css';
 import NewTopic from './NewTopic.js';
 
@@ -40,19 +41,17 @@ class NewLessonPage extends Component {
       topic_content: e.target.infoA.value
     }
     this.setState({topicInfo: newTopicDetails});
-    console.log(newTopicDetails);
     this.postNewSession(newSessionInfo);
   }
 
   postNewSession = (newSessionInfo) => {
-   // const {API_BASE_URL} = require('../../config.js');
 
     let options = {
       method: 'POST',
       body: JSON.stringify(newSessionInfo),
       headers: { "Content-Type": "application/json" }
     };
-    fetch(`http://localhost:8000/api/sessions`, options)
+    fetch(`${config.API_BASE_URL}/sessions`, options)
     .then(response => {
       if(!response.ok) {
         console.log('Error.');
@@ -62,15 +61,12 @@ class NewLessonPage extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       let session_id = data.id;
-      console.log(session_id);
       this.postNewTopics(session_id);
     })
     .catch(err => console.log('Error with request'))
   }
   postNewTopics = (session_id) => {
-    console.log(session_id);
     let newSessionTopic = {
       lesson_id: session_id,
       lesson_date: this.state.topicInfo.lesson_date,
@@ -78,14 +74,13 @@ class NewLessonPage extends Component {
       topic_name: this.state.topicInfo.topic_name,
       topic_content: this.state.topicInfo.topic_content
     }
-    console.log(newSessionTopic);
 
     let options = {
       method: 'POST',
       body: JSON.stringify(newSessionTopic),
       headers: { "Content-Type": "application/json" }
     };
-    fetch('http://localhost:8000/api/topics', options)
+    fetch(`${config.API_BASE_URL}/topics`, options)
     .then(response => {
       if(!response.ok) {
         console.log('Error.');
@@ -95,7 +90,6 @@ class NewLessonPage extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       let student = data.student_id;
       this.showLinkToStudentPage(student);
     })
@@ -115,9 +109,8 @@ class NewLessonPage extends Component {
     this.handleGetTopics(studentId);
   }
   handleGetTopics = (id) => {
-   // const {API_BASE_URL} = require('../../config.js');
 
-    fetch(`http://localhost:8000/api/topics/${id}`)
+    fetch(`${config.API_BASE_URL}/topics/${id}`)
     .then(response => {
       if(!response.ok) {
         console.log('Error.');
@@ -135,7 +128,7 @@ class NewLessonPage extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/api/students')
+    fetch(`${config.API_BASE_URL}/students`)
       .then(response => {
         if(!response.ok) {
           console.log('Error.');

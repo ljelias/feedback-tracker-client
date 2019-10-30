@@ -1,11 +1,20 @@
 {
   "version": 2,
+  "build": {
+    "env": {
+      "REACT_APP_API_BASE_URL": "https://hidden-tor-53269.herokuapp.com"
+    }
+  },
   "alias": "ljelias-feedbacktracker",
   "name": "feedbacktracker",
   "routes": [
       {
         "src": "^/static/(.*)",
         "dest": "/static/$1"
+      },
+      {
+        "src": "^/manifest.json",
+        "dest": "/manifest.json"
       },
       {
         "src": ".*",

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import config from '../../config.js';
 import './TeacherDashboard.css';
 import NewStudentForm from '../NewStudentForm/NewStudentForm.js';
 import Roster from '../Roster/Roster.js'
@@ -29,7 +29,7 @@ class TeacherDashboard extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/api/students')
+    fetch(`${config.API_BASE_URL}/students`)
       .then(response => {
         if(!response.ok) {
           console.log('Error.');
@@ -55,7 +55,7 @@ class TeacherDashboard extends Component {
     return (
       <div>
         <header className='dashTop'>
-          <h2 className='dashbdHead'>Instructor Dashboard: My students</h2>
+          <h2 className='dashbdHead'>Instructor Dashboard: My&nbsp;students</h2>
         </header>
         <main className='row'>
           <section className='columnA3 addStudent'>

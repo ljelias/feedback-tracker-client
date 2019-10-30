@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../config.js';
 import './TeacherViewStudent.css';
 import NoteViewOptions from '../NoteViewOptions/NoteViewOptions';
 import StudentDetailsDisplay from '../StudentDetails/StudentDetailsDisplay';
@@ -26,7 +27,7 @@ class TeacherViewStudent extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/api/students/${this.props.match.params.student}`)
+    fetch(`${config.API_BASE_URL}/students/${this.props.match.params.student}`)
       .then(response => {
         if(!response.ok) {
           console.log('Error.');
@@ -42,7 +43,7 @@ class TeacherViewStudent extends Component {
         this.setState({ error: err.message });
       });
 
-      fetch(`http://localhost:8000/api/topics/${this.props.match.params.student}`)
+      fetch(`${config.API_BASE_URL}/topics/${this.props.match.params.student}`)
       .then(response => {
         if(!response.ok) {
           console.log('Error.');

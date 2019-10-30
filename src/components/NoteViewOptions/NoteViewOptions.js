@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../../config.js';
 import './NoteViewOptions.css';
 import LessonNotesList from '../LessonNotesList/LessonNotesList';
 import ViewNotesByTopic from '../ViewNotesByTopic/ViewNotesByTopic';
@@ -23,7 +24,7 @@ class NoteViewOptions extends Component {
       method: 'GET',
       headers: { "Content-Type": "application/json" }
     };
-    fetch(`http://localhost:8000/api/sessions/student/${id}`, options)
+    fetch(`${config.API_BASE_URL}/sessions/student/${id}`, options)
     .then(response => {
       if(!response.ok) {
         console.log('Error.');
@@ -47,7 +48,7 @@ class NoteViewOptions extends Component {
     this.handleGetTopic(selection)
   }
   handleGetTopic = (selection) => {
-    fetch(`http://localhost:8000/api/topics/${selection}/${this.props.studentId}`)
+    fetch(`${config.API_BASE_URL}/topics/${selection}/${this.props.studentId}`)
       .then(response => {
         if(!response.ok) {
           console.log('Error.');

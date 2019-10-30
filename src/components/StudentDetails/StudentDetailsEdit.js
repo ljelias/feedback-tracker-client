@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import config from '../../config.js';
 import './StudentDetailsEdit.css';
 
 class StudentDetailsEdit extends Component {
@@ -23,7 +24,7 @@ class StudentDetailsEdit extends Component {
       body: JSON.stringify(updatedStudent),
       headers: { "Content-Type": "application/json" }
     };
-    fetch(`http://localhost:8000/api/students/${id}`, options)
+    fetch(`${config.API_BASE_URL}/students/${id}`, options)
     .then(response => {
       if(!response.ok) {
         console.log('Error.');

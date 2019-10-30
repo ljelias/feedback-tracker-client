@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import config from '../../config.js';
 import './SingleLessonView.css';
 
 class SingleLessonView extends Component {
@@ -15,7 +16,7 @@ class SingleLessonView extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:8000/api/sessions/${this.props.match.params.lesson}`)
+    fetch(`${config.API_BASE_URL}/sessions/${this.props.match.params.lesson}`)
       .then(response => {
         if(!response.ok) { console.log('Error.');
                            throw new Error('Something went wrong'); }       
@@ -35,10 +36,9 @@ class SingleLessonView extends Component {
   }
 
   getStudentInfo = (studentId) => {
-    fetch(`http://localhost:8000/api/students/${studentId}`)
+    fetch(`${config.API_BASE_URL}/students/${studentId}`)
     .then(response => {
-      if(!response.ok) { console.log('Error.');
-                         throw new Error('Something went wrong'); }       
+      if(!response.ok) { console.log('Error.');  throw new Error('Something went wrong'); }       
       return response;
     })
     .then(response => response.json())
@@ -50,7 +50,7 @@ class SingleLessonView extends Component {
     });  
   }
   getSessionTopics = (sessionId) => {
-    fetch(`http://localhost:8000/api/topics/session/${sessionId}`)
+    fetch(`${config.API_BASE_URL}/topics/session/${sessionId}`)
     .then(response => {
       if(!response.ok) { console.log('Error.');
                          throw new Error('Something went wrong'); }       
