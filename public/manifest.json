@@ -1,6 +1,6 @@
 {
-  "short_name": "Feedback",
-  "name": "Feedback Tracker",
+  "short_name": "feedback",
+  "name": "feedbacktrackerapp",
   "icons": [
     {
       "src": "android-chrome-192x192.png",
