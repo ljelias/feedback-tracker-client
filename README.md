@@ -15,7 +15,9 @@
 --------------------------------------------------
 
 ### This app is built with: 
-- react
+- React
+- HTML5
+- CSS3
 
 ### Link to live app:
 https://feedbacktracker.ljelias.now.sh

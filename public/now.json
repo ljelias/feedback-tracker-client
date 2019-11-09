@@ -2,7 +2,7 @@
   "version": 2,
   "build": {
     "env": {
-      "REACT_APP_API_BASE_URL": "https://hidden-tor-53269.herokuapp.com"
+      "REACT_APP_API_BASE_URL": "https://hidden-tor-53269.herokuapp.com/api"
     }
   },
   "alias": "ljelias-feedbacktracker",
@@ -16,6 +16,19 @@
         "src": "/manifest.json",
         "dest": "/manifest.json"
       },
+      {
+        "src": "/favicon.ico",
+        "dest": "/favicon.ico"
+      },
+      {
+        "src": "/favicon-32x32.png",
+        "dest": "/favicon-32x32.png"
+      },
+      {
+        "src": "/favicon-16x16.png",
+        "dest": "/favicon-16x16.png"
+      },
+
       {
         "src": ".*",
         "dest": "/index.html"
